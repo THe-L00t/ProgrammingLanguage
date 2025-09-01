@@ -1,6 +1,10 @@
 #include "save.h"
 
-void save(std::string fileName)
+#include <iostream>
+#include <fstream>
+#include <chrono>
+
+void save(const std::string& fileName)
 {
 	std::ifstream in{ fileName };
 
