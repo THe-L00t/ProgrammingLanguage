@@ -2,7 +2,7 @@
 
 #include "save.h"
 
-int main() //program start point
+int main()
 {
-	return 20250901;
-}// end point
+
+}
