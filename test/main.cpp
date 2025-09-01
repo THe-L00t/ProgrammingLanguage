@@ -7,12 +7,18 @@
 // C/C++ - SDL검사 : 아니요(/sdl-)
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
+#include <fstream>
 
 #include "save.h"
 
 int main()
 {
-	for (int i = 0; i < 10; i++) {
-		std::cout << "Hello, World!" << '\n';
-	}
+	std::cout << "Hello, World!" << std::endl;
+	
+	std::ifstream in{ "main.cpp" };
+	in >> std::noskipws;
+
+	char c;
+	while (in >> c)
+		std::cout << c;
 }
