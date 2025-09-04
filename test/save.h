@@ -1,4 +1,4 @@
 #pragma once
-#include <string>
+#include <string_view>
 
-void save(const std::string& fileName);
+void save(std::string_view fileName);
