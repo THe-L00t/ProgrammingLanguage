@@ -5,16 +5,13 @@
 
 #include "save.h"
 
-int main()
-{	// C++언어는 프로그램이 실행되면 입출력하기 위한 객체를 자동으로 생성한다. 
-	// cin	-	키보드
-	// cout	-	모니터
-	// cerr	-	모니터 
-	// clog	-	모니터
+// [문제] 화면에 글자를 10번 출력해보자
 
-	std::cerr << "Hello, World!" << std::endl;
-	std::clog << "Hello, World!" << std::endl;
-	// 모두 가능 
+int main()
+{	
+	for (size_t i = 0; i < 10; i++) {
+		std::cout << "hello, world!" << std::endl;
+	}
 
 	save("main.cpp");
 
