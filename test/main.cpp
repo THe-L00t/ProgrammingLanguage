@@ -11,7 +11,11 @@ int main()
 	// cout	-	모니터
 	// cerr	-	모니터 
 	// clog	-	모니터
-	
+
+	std::cerr << "Hello, World!" << std::endl;
+	std::clog << "Hello, World!" << std::endl;
+	// 모두 가능 
+
 	save("main.cpp");
 
 }
