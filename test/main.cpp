@@ -5,9 +5,12 @@
 
 #include "save.h"
 
+// [문제] 글자를 출력해본다.
+
 int main()
 {
-	std::cout << "Hello, World!" << std::endl;
+
 	
 	save("main.cpp");
+
 }
