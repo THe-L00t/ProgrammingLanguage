@@ -22,6 +22,7 @@ int main()
 	std::cout << "몇 단을 찍을까요? ";
 	std::cin >> num;
 
+	// 입력 값 검사가 필요하다
 	std::cout << num << "단 입니다. " << std::endl;
 	for (size_t i = 1; i < 10; i++)
 	{
