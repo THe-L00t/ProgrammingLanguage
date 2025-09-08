@@ -2,20 +2,23 @@
 //	
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
-#include <thread>
-#include <chrono>
+#include <string>
 
 #include "save.h"
 
-// [문제] 화면에 글자를 10번 출력해보자
+// [문제] 이름을 물어보고 반갑다고 인사하자.
+// 예) 다음가 같이 실행되게 해 본다. 
+
+//	이름은? 씨쁠쁠
+// 씨쁠쁠니 반갑습니다. 
 
 int main()
 {	
-	for (size_t i = 0; i < 10; i++) {
-		std::cout << "hello, world!" << std::endl;
-		using namespace std::chrono_literals;
-		std::this_thread::sleep_for(300ms);
-	}
+	std::string name;
+	std::cout << "이름은? ";
+	std::cin >> name;
+
+	std::cout << name << "님 반갑습니다. ";
 
 	save("main.cpp");
 
