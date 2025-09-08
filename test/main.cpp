@@ -7,25 +7,12 @@
 
 #include "save.h"
 
-// [문제] 구구단 전체를 출력하라 
-//
-
- 
- 
 
 int main()
 {	
-	for (size_t i = 1; i <= 5; i+=4)
-	{
-		for (size_t j = 1; j < 10; j++)
-		{
-			std::print("{:} x {:} = {:2}   ", i, j, i * j);
-			std::print("{:} x {:} = {:2}   ", i+1, j, (i+1) * j);
-			std::print("{:} x {:} = {:2}   ", i+2, j, (i+2) * j);
-			std::print("{:} x {:} = {:2}\n", i+3, j, (i+3) * j);
-		}
-		std::cout << std::endl;
-	}
+	int n{ 1234 };
+
+	std::cout << "n에 저장된 값은 " << n << std::endl;
 
 	save("main.cpp");
 
