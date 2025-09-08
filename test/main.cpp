@@ -3,22 +3,30 @@
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
 #include <string>
+#include <print>
 
 #include "save.h"
 
-// [문제] 이름을 물어보고 반갑다고 인사하자.
-// 예) 다음가 같이 실행되게 해 본다. 
-
-//	이름은? 씨쁠쁠
-// 씨쁠쁠니 반갑습니다. 
+// [문제] 구구단을 출력한다. 
+// 몇 단을 찍고 싶은지 물어봐서 다음과 같이 실행되도록 하자 
+//
+// 몇 단을 찍을까요? 7
+// 7단 입니다
+// 7 x 1 = 7
+ 
+ 
 
 int main()
 {	
-	std::string name;
-	std::cout << "이름은? ";
-	std::cin >> name;
+	int num{};
+	std::cout << "몇 단을 찍을까요? ";
+	std::cin >> num;
 
-	std::cout << name << "님 반갑습니다. ";
+	std::cout << num << "단 입니다. " << std::endl;
+	for (size_t i = 1; i < 10; i++)
+	{
+		std::println("{:} x {:} = {:2}", num, i, num * i);
+	}
 
 	save("main.cpp");
 
