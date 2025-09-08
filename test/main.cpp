@@ -7,26 +7,24 @@
 
 #include "save.h"
 
-// [문제] 구구단을 출력한다. 
-// 몇 단을 찍고 싶은지 물어봐서 다음과 같이 실행되도록 하자 
+// [문제] 구구단 전체를 출력하라 
 //
-// 몇 단을 찍을까요? 7
-// 7단 입니다
-// 7 x 1 = 7
+
  
  
 
 int main()
 {	
-	int num{};
-	std::cout << "몇 단을 찍을까요? ";
-	std::cin >> num;
-
-	// 입력 값 검사가 필요하다
-	std::cout << num << "단 입니다. " << std::endl;
-	for (size_t i = 1; i < 10; i++)
+	for (size_t i = 1; i <= 5; i+=4)
 	{
-		std::println("{:} x {:} = {:2}", num, i, num * i);
+		for (size_t j = 1; j < 10; j++)
+		{
+			std::print("{:} x {:} = {:2}   ", i, j, i * j);
+			std::print("{:} x {:} = {:2}   ", i+1, j, (i+1) * j);
+			std::print("{:} x {:} = {:2}   ", i+2, j, (i+2) * j);
+			std::print("{:} x {:} = {:2}\n", i+3, j, (i+3) * j);
+		}
+		std::cout << std::endl;
 	}
 
 	save("main.cpp");
