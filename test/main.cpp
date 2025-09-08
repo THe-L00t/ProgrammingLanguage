@@ -2,7 +2,8 @@
 //	
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
-#include <Windows.h>
+#include <thread>
+#include <chrono>
 
 #include "save.h"
 
@@ -12,7 +13,8 @@ int main()
 {	
 	for (size_t i = 0; i < 10; i++) {
 		std::cout << "hello, world!" << std::endl;
-		Sleep(1000);
+		using namespace std::chrono_literals;
+		std::this_thread::sleep_for(300ms);
 	}
 
 	save("main.cpp");
