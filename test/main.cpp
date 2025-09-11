@@ -11,11 +11,11 @@
 
 int main()
 {	
-	int n = 0xFF'FF'FF'FF;
+	float f = 10.1234;
 
-	std::cout << "n에 저장된 값은 " << n << std::endl;
+	std::cout << "n에 저장된 값은 " << f << std::endl;
 	// n에 저장된 값을 이진수로 출력한다. 
-	std::cout << std::bitset<32>(n) << std::endl;;	// 첫 자리 signbit 음수인지 양수인지 나타냄
+	std::cout << std::bitset<32>(f) << std::endl;;	// float 부동소수점 사용, 그러나 제대로 출력되지 않음
 
 	save("main.cpp");
 }
