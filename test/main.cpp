@@ -11,6 +11,11 @@
 // 합계를 화면에 출력하라
 // main이 문제없이 의도대로 실행되도록 하라
 
+int add(int& a, int& b) {
+	return int(a + b);
+}
+
+
 int main()
 {
 	int a{}, b{};
