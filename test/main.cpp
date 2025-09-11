@@ -5,10 +5,12 @@
 
 #include "save.h"
 
+int n;	// 2
 
 int main()
 {	
-	int n;	//컴파일러의 최소 요소 = token
+	int n;	// 1
 
+	new int{ 1234 }; // 3
 	save("main.cpp");
 }
