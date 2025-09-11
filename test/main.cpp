@@ -2,8 +2,7 @@
 //	자료형과 변수 
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
-#include <string>
-#include <print>
+#include <bitset>
 
 #include "save.h"
 
@@ -15,6 +14,8 @@ int main()
 	int n = std::numeric_limits<int>::max();
 
 	std::cout << "n에 저장된 값은 " << n << std::endl;
+	// n에 저장된 값을 이진수로 출력한다. 
+	std::cout << std::bitset<32>(n) << std::endl;;
 
 	save("main.cpp");
 
