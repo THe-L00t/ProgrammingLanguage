@@ -6,21 +6,18 @@
 
 #include "save.h"
 
+int gn;
+
 int main()
 {	
-	class Player {
-		std::string name;
-		long long age;
-	};
+	int n;
+	float f;
+	int* np = new int{};
 
-	// [실습] 다른 자료형으로 바꿔 내용을 확인하자
-	Player n;
-
-	// 언제나 메모리를 차지하고 있는 객체의 다음 질문으로 확인할 수 있다.
-	std::cout << sizeof n << std::endl;	// 1. 크기는?
-	std::cout << std::addressof(n) << std::endl;// 2. 주소는?
-	std::cout << typeid(n).name() << std::endl;// 3. 자료형은?
-
+	std::cout <<"지역변수 n의 주소 :   " << std::addressof(n) << std::endl;
+	std::cout << "지역변수 f의 주소 :   " << std::addressof(f) << std::endl;
+	std::cout << "전역변수 gn의 주소 :  " << std::addressof(gn) << std::endl;
+	std::cout << "동적할당변수의 주소 : " << np << std::endl;
 
 	save("main.cpp");
 }
