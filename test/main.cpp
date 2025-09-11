@@ -5,12 +5,12 @@
 
 #include "save.h"
 
-int n;	// 2
-
 int main()
 {	
-	int n;	// 1
+	int n = 1234;
+	Player a;
 
-	new int{ 1234 }; // 3
+	// 언제나 메모리를 차지하고 있는 객체 
+
 	save("main.cpp");
 }
