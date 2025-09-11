@@ -11,12 +11,11 @@
 
 int main()
 {	
-	int n = std::numeric_limits<int>::max();
+	int n = 0xFF'FF'FF'FF;
 
 	std::cout << "n에 저장된 값은 " << n << std::endl;
 	// n에 저장된 값을 이진수로 출력한다. 
-	std::cout << std::bitset<32>(n) << std::endl;;
+	std::cout << std::bitset<32>(n) << std::endl;;	// 첫 자리 signbit 음수인지 양수인지 나타냄
 
 	save("main.cpp");
-
 }
