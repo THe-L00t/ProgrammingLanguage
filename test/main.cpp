@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------------------------------------
-//	자료형과 변수 
+//	함수 
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
 #include <string>
@@ -11,10 +11,11 @@
 // 합계를 화면에 출력하라
 // main이 문제없이 의도대로 실행되도록 하라
 
-int add(int& a, int& b) {
-	return int(a + b);
-}
+int add(int&, int&);	// function declaration, prototype, signature
 
+int add(int& a, int& b) {	
+	return a + b;
+}
 
 int main()
 {
@@ -26,5 +27,5 @@ int main()
 	std::cout << a << " + " << b << " = " << add(a, b) << std::endl;
 
 
-	save("main.cpp");
+	//save("main.cpp");
 }
