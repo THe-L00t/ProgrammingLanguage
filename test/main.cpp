@@ -12,8 +12,9 @@
 // main이 문제없이 의도대로 실행되도록 하라
 
 int add(int&, int&);	// function declaration, prototype, signature
+//	메모리와 무관
 
-int add(int& a, int& b) {	
+int add(int& a, int& b) {	//function definition, 메모리를 차치함
 	return a + b;
 }
 
