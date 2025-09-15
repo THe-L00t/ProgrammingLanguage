@@ -5,6 +5,9 @@
 #include <string>
 #include <random>
 #include <print>
+#include <algorithm>
+#include <map>
+
 #include "save.h"
 
 std::default_random_engine dre{};
@@ -20,12 +23,13 @@ int main()
 	for (int& i : num) {
 		i = uid(dre);
 	}
-	int max{};
+	int max{std::numeric_limits<int>::min()};
 	for (const int& i : num) {
 		std::print("{:10}", i);
 		if (max < i) max = i;
 	}
 	std::cout << std::endl << "제일 큰 값은 " << max << "입니다." << std::endl;
+	
 
 	//save("main.cpp");
 }
