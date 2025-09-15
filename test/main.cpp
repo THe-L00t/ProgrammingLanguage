@@ -9,7 +9,7 @@
 
 int main()
 {
-	int n[4000'0]{};
+	int n[4000'0]{ 3 };	// {...}을 initializer - list 하고 부른다. {}과 다름
 
 	// 초기화란 무엇인가?
 	// 객체가 생성될 때 특정한 값으로 설정하는 동작
@@ -18,7 +18,7 @@ int main()
 	// 초기화는 단 한 번 가능, 그 외의 값 변경은 assignment(할당, 대입, 배정)라고 한다.
 
 	for (int& i : n) {
-		std::cout << i << std::endl;
+		std::cout << i << ' ';
 	}
 
 	//save("main.cpp");
