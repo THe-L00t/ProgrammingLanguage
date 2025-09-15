@@ -27,6 +27,7 @@ int main()
 
 	std::cout << a << " + " << b << " = " << add(a, b) << std::endl;
 
+	std::cout << std::addressof(add) << std::endl;
 
 	//save("main.cpp");
 }
