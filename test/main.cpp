@@ -15,6 +15,8 @@ char c[Max]{1,2,3};
 int main()
 {
 	std::cout << c[Max-1] << std::endl;
-	
+	for (auto& n : c) {
+		std::cout << static_cast<char>(n + '0') << ' ';
+	}
 	//save("main.cpp");
 }
