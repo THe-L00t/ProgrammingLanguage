@@ -9,19 +9,10 @@
 // 어디에 위치하나?			-> STACK segment
 // 얼마만큼 쓸 수 있나?		->1 Megabyte
 
+int n{ 123 };
+
 int main()
 {
-	
 	int n{ 1 };
-	{
-		int n{ 2 };
-		{ 
-			int n{ 3 };
-			std::cout << n << std::endl;
-			// 이 지역을 벗어난 n의 값을 출력하라
-			// ::n 은 전역변수만 사용가능
-		}
-	}
-
 	//save("main.cpp");
 }
