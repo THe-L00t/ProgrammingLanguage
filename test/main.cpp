@@ -5,6 +5,9 @@
 
 #include "save.h"
 
+// [문제] 지역변수란 무엇인가?	-> 전역변수가 아닌 모든 변수
+// 어디에 위치하나?			-> STACK segment
+// 얼마만큼 쓸 수 있나?		->1 Megabyte
 
 int main()
 {
