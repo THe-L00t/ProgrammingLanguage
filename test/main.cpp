@@ -14,10 +14,11 @@ int main()
 {
 	// [문제] int형 변수를 몇 개까지 만들 수 있는 지 확인하라.
 	// 전체 몇 바이트인지 알아보자. 
-	int n[250'0000];
+	int n[250*1024];
+	int s{ 0 };
 	for (int& i : n) {
 		std::cout << i << std::endl;
 	}
-
+	std::cout << sizeof(n)/1024./1024. <<"mb" << std::endl;
 	//save("main.cpp");
 }
