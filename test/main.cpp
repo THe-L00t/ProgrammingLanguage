@@ -7,7 +7,7 @@
 
 #include "save.h"
 
-void change(int& a, int& b);	//함수 선언
+void change(int&, int&);	//함수 선언, 단순 함수에서는 인자를 작성하는 것이 촌스럽다 
 
 int main()
 {
