@@ -21,7 +21,7 @@ int main()
 	//save("main.cpp");
 }
 
-void change(int& a, int& b)
+void change(int& a, int& b)	// 함수 정의 
 {
 	int temp{ a };
 	a = b;
