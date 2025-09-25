@@ -20,10 +20,10 @@ int main()
 	int a[]{ 9,3,7,1,2,6,4,5,0,8 };
 
 	// [문제] 가장 큰 숫자가 제일 오른쪽으로 옮겨라
-	for (int& num : a) {
-
+	for (size_t i = 0; i < 9; i++)
+	{
+		if (a[i] > a[i + 1]) change(&a[i], &a[i + 1]);
 	}
-	change(&a[0], &a[1]);
 
 	for (int num : a) {
 		std::cout << num << ' ';
