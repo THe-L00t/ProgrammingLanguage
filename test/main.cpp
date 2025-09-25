@@ -15,6 +15,7 @@ int main()
 	
 	p = &a;
 	*p = 20250925;
+	// 안해도 될 삽질은 하지 말자, 포인터는 이렇게 사용하는 것이 아니다 
 
 	std::cout <<  a << std::endl;	
 	//save("main.cpp");
