@@ -7,6 +7,7 @@
 
 #include "save.h"
 
+void change(int& a, int& b);	//함수 선언
 
 int main()
 {
@@ -18,4 +19,11 @@ int main()
 	std::cout << "a - " << a << ", b - " << b << std::endl;	//a - 2, b - 1
 
 	//save("main.cpp");
+}
+
+void change(int& a, int& b)
+{
+	int temp{ a };
+	a = b;
+	b = temp;
 }
