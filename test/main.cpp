@@ -7,17 +7,25 @@
 
 #include "save.h"
 
+void change(int*, int*);
+
+void change(int* a, int* b) {
+	int temp{ *a };
+	*a = *b;
+	*b = temp;
+}
 
 int main()
 {
-	int a{ 1 };
-	int* p;
-	
-	p = &a;
-	*p = 20250925;
-	// 안해도 될 삽질은 하지 말자, 포인터는 이렇게 사용하는 것이 아니다 
+	int a[]{ 9,3,7,1,2,6,4,5,0,8 };
 
-	std::cout <<  a << std::endl;	
+	change(&a[0], &a[1]);
+
+	for (int num : a) {
+		std::cout << num << ' ';
+	}
+	std::cout << std::endl;
+	
 	//save("main.cpp");
 }
 
