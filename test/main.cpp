@@ -7,24 +7,24 @@
 
 #include "save.h"
 
-void change(int&, int&);	//함수 선언, 단순 함수에서는 인자를 작성하는 것이 촌스럽다 
+void change(int*, int*);	//함수 선언, 단순 함수에서는 인자를 작성하는 것이 촌스럽다 
 
 int main()
 {
 	int a{ 1 }, b{ 2 };
 
 	// 여기서 코딩으로 a와 b의 값을 바꿔주세요
-	change(a, b);
+	change(&a, &b);	// call by value
 
 	std::cout << "a - " << a << ", b - " << b << std::endl;	//a - 2, b - 1
 
 	//save("main.cpp");
 }
 
-void change(int& a, int& b)	// 함수 정의 
+void change(int* a, int* b)	// 함수 정의 
 {
-	int temp{ a };
-	a = b;
-	b = temp;
+	int temp{ *a };
+	*a = *b;
+	*b = temp;
 	return;		//있는 것과 동일하다 
 }
