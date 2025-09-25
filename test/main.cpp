@@ -13,7 +13,7 @@ int main()
 	int a{ 1 }, b{ 2 };
 
 	// 여기서 코딩으로 a와 b의 값을 바꿔주세요
-	std::swap(a, b);
+	change(a, b);
 
 	std::cout << "a - " << a << ", b - " << b << std::endl;	//a - 2, b - 1
 
