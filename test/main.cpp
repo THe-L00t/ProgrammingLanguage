@@ -19,10 +19,14 @@ int main()
 {
 	int a[]{ 9,3,7,1,2,6,4,5,0,8 };
 
-	// [문제] 가장 큰 숫자가 제일 오른쪽으로 옮겨라
+	// [문제] a의 원소를 오름차순으로 정렬 하라 
+	//bubble sort
 	for (size_t i = 0; i < 9; i++)
 	{
-		if (a[i] > a[i + 1]) change(&a[i], &a[i + 1]);
+		for (size_t j = 0; j < 9-i; j++)
+		{
+			if(a[j] > a[j+1]) change(&a[j], &a[j + 1]);
+		}
 	}
 
 	for (int num : a) {
