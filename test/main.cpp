@@ -13,10 +13,7 @@ int main()
 	int a{ 1 }, b{ 2 };
 
 	// 여기서 코딩으로 a와 b의 값을 바꿔주세요
-	int temp{ a };
-	a = b;
-	b = temp;
-	//간단한 3줄이지만 하나의 알고리즘이다
+	std::swap(a, b);
 
 	std::cout << "a - " << a << ", b - " << b << std::endl;	//a - 2, b - 1
 
