@@ -26,4 +26,5 @@ void change(int& a, int& b)	// 함수 정의
 	int temp{ a };
 	a = b;
 	b = temp;
+	return;		//있는 것과 동일하다 
 }
