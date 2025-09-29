@@ -8,7 +8,8 @@
 
 #include "save.h"
 
-std::default_random_engine dre{};
+std::random_device rd{};
+std::default_random_engine dre{rd()};
 std::uniform_int_distribution uid{ 0,99'9999 };
 
 // [문제] 10만개의 랜덤값을 갖는 int를 생성한 후 
@@ -31,7 +32,11 @@ int main()
 	for (int& n : nums) {
 		n = uid(dre);
 	}
-	// sorting -> 알고리즘 코드를 이용하면 된다. 
+	// 이 함수를 qsort가 호출해서 2개의 int를 바꿀지 말지 물어본다. 
+	// cosnt -> 메모리를 읽기만 하겠다는 약속(Read Only Memory)
+	// void* -> qsort함수 입장에서 이 메모리가 원래는 어떤 자료형인지 나는 관심이 없다. 
+	//			그런데 오름차순 너는 이 메모리의 원래 형식을 잘 알고 있겠지?
+	//			그러니 원하는 형식으로 네 마음대로 알아서 변환해서 써
 	qsort(nums, size, sizeof(int), [](const void* a, const void* b) {
 		int A = *(int*)a; int B = *(int*)b;
 		if (A < B) return -1;
