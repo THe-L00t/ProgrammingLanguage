@@ -9,6 +9,12 @@
 
 int main()
 {
+	int a{ 1 };
+	int& r{ a };
+	
+	r = 20250929;
+
+	std::cout << a << std::endl;
 
 	//save("main.cpp");
 }
