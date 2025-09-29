@@ -32,7 +32,12 @@ int main()
 		n = uid(dre);
 	}
 	// sorting -> 알고리즘 코드를 이용하면 된다. 
-	qsort(nums, size, sizeof(int), 오름차순)
+	qsort(nums, size, sizeof(int), [](const void* a, const void* b) {
+		int A = *(int*)a; int B = *(int*)b;
+		if (A < B) return -1;
+		else if (A > B) return 1;
+		else return 0;
+		});
 	int cnt{};
 	for (int& n : nums) {
 		std::print("{:>8}", n);
