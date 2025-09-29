@@ -1,38 +1,43 @@
 //------------------------------------------------------------------------------------------------------------
-// change
-// 두 개 변수의 값을 서로 바꾸는 함수를 만든다. 
-// pointer, reference, 원격 조종
+// reference
+// qsort
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
+#include <random>
+#include <print>
 
 #include "save.h"
 
-void change(int*, int*);
+std::default_random_engine dre{};
+std::uniform_int_distribution uid{ 0,99'9999 };
 
-void change(int* a, int* b) {
-	int temp{ *a };
-	*a = *b;
-	*b = temp;
+// [문제] 10만개의 랜덤값을 갖는 int를 생성한 후 
+// 오름차순으로 정렬하고 
+// 화면에 1줄(80글자)에 10개씩 출력하라
+
+void change(int&, int&);
+void change(int& a, int& b)
+{
+	int temp{ a };
+	a = b;
+	b = temp;
 }
+
+int nums[100'000];
 
 int main()
 {
-	int a[]{ 9,3,7,1,2,6,4,5,0,8 };
-
-	// [문제] a의 원소를 오름차순으로 정렬 하라  
-	//bubble sort
-	for (size_t i = 0; i < 9; i++)
-	{
-		for (size_t j = 0; j < 9-i; j++)
-		{
-			if(a[j] > a[j+1]) change(&a[j], &a[j + 1]);
-		}
+	for (int& n : nums) {
+		n = uid(dre);
 	}
-
-	for (int num : a) {
-		std::cout << num << ' ';
+	qsort(nums, 100'000, sizeof(int), [](const void* a, const void* b) {
+		int A = *(int*)(a); int B = *(int*)(B);
+		return (A > B) ? 1 : 0;
+		});
+	for (int& n : nums) {
+		n = uid(dre);
 	}
-	std::cout << std::endl;
+	
 	
 	//save("main.cpp");
 }
