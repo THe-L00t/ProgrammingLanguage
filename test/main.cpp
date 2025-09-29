@@ -14,7 +14,11 @@ int main()
 	
 	r = 20250929;
 
-	std::cout << a << std::endl;
+	std::cout << sizeof(r) << std::endl;
+	std::cout << std::addressof(r) << std::endl;
+	std::cout << typeid(r).name() << std::endl;
+
+	std::cout << std::addressof(a) << std::endl;
 
 	//save("main.cpp");
 }
