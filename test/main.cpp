@@ -31,13 +31,8 @@ int main()
 	for (int& n : nums) {
 		n = uid(dre);
 	}
-	for (size_t i = 0; i < size - 1; i++)
-	{
-		for (size_t j = 0; j < size - 1 - i; j++)
-		{
-			if (nums[j] > nums[j + 1]) change(nums[j], nums[j + 1]);
-		}
-	}
+	// sorting -> 알고리즘 코드를 이용하면 된다. 
+	qsort(nums, size, sizeof(int), 오름차순)
 	int cnt{};
 	for (int& n : nums) {
 		std::print("{:>8}", n);
