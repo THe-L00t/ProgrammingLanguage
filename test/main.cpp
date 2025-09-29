@@ -23,19 +23,28 @@ void change(int& a, int& b)
 	b = temp;
 }
 
-int nums[100'000];
+const int size{ 100'000 };
+int nums[size];
 
 int main()
 {
 	for (int& n : nums) {
 		n = uid(dre);
 	}
-	qsort(nums, 100'000, sizeof(int), [](const void* a, const void* b) {
-		int A = *(int*)(a); int B = *(int*)(B);
-		return (A > B) ? 1 : 0;
-		});
+	for (size_t i = 0; i < size-1; i++)
+	{
+		for (size_t j = 0; j < size-1 - i; j++)
+		{
+			if (nums[j] > nums[j + 1]) change(nums[j], nums[j + 1]);
+		}
+	}
+	int cnt{};
 	for (int& n : nums) {
-		n = uid(dre);
+		std::print("{:>8}", n);
+		cnt++;
+		if (cnt % 10 == 0) {
+			std::cout << std::endl;
+		}
 	}
 	
 	
