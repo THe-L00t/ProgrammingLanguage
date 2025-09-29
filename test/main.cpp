@@ -6,19 +6,18 @@
 
 #include "save.h"
 
+void change(int&, int&);
+void change(int& a, int& b) {
+	int temp{ a };
+	a = b;
+	b = temp;
+}
 
 int main()
 {
-	int a{ 1 };
-	int& r{ a };
-	
-	r = 20250929;
+	int a{ 1 }, b{ 2 };
 
-	std::cout << sizeof(r) << std::endl;
-	std::cout << std::addressof(r) << std::endl;
-	std::cout << typeid(r).name() << std::endl;
-
-	std::cout << std::addressof(a) << std::endl;
+	change(a, b);
 
 	//save("main.cpp");
 }
