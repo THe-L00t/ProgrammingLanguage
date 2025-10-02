@@ -16,8 +16,9 @@ int main()
 
 	int num{};
 	std::cin >> num;
-
-	int val[num]; // 시험 문제 예시
+	
+	// 이 메모리는 실행 시 위치가 결정된다 
+	// 결국 free store에 할당해야한다
 
 	//save("main.cpp");
 }
