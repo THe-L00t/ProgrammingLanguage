@@ -7,13 +7,17 @@
 
 #include "save.h"
 
-char pangram[]{"the quick brown fox jumps over the lazy dog"}; // 문자열 관련 ASCII 설명
-
+char pangram[]{"the quick brown fox jumps over the lazy dog"}; 
 int main()
 {
-	std::cout << std::addressof(pangram) << std::endl;	//주소 8바이트 
-	std::cout << std::hex<< (int)pangram << std::endl;	//4바이트
-	
+	qsort(pangram, sizeof pangram -1, sizeof(char), [](const void* a, const void* b) {
+		return *(char*)a - *(char*)b;
+		});
+	/*for (const char& c : pangram) {
+		std::cout << c;
+	}*/
+	std::cout << pangram << std::endl;
+	std::cout << std::endl;
 	//save("main.cpp");
 }
 
