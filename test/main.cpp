@@ -11,7 +11,9 @@ char pangram[]{"the quick brown fox jumps over the lazy dog"}; // 문자열 관련 AS
 
 int main()
 {
-	std::cout << '\7';
+	char s[]{ "the" };
+
+	std::cout << sizeof(s) << std::endl;	//왜 4바이트가 나오는가?
 	//save("main.cpp");
 }
 
