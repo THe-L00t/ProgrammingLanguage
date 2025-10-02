@@ -11,8 +11,8 @@ char pangram[]{"the quick brown fox jumps over the lazy dog"}; // 문자열 관련 AS
 
 int main()
 {
-	std::cout << std::addressof(pangram) << std::endl;
-	std::cout << (int)pangram << std::endl;
+	std::cout << std::addressof(pangram) << std::endl;	//주소 8바이트 
+	std::cout << std::hex<< (int)pangram << std::endl;	//4바이트
 	
 	//save("main.cpp");
 }
