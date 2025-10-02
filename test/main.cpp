@@ -19,6 +19,7 @@ int main()
 	
 	// 이 메모리는 실행 시 위치가 결정된다 
 	// 결국 free store에 할당해야한다
+	new int[num];	// 내 의지로 되는 것이 아님
 
 	//save("main.cpp");
 }
