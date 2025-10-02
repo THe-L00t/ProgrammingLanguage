@@ -10,7 +10,7 @@
 char pangram[]{"the quick brown fox jumps over the lazy dog"}; 
 int main()
 {
-	qsort(pangram, sizeof pangram -1, sizeof(char), [](const void* a, const void* b) {
+	qsort(pangram, (sizeof pangram -1)/sizeof(char), sizeof(char), [](const void* a, const void* b) {
 		return *(char*)a - *(char*)b;
 		});
 	/*for (const char& c : pangram) {
