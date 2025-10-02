@@ -11,11 +11,8 @@ char pangram[]{"the quick brown fox jumps over the lazy dog"}; // 문자열 관련 AS
 
 int main()
 {
-	char s[]{ "the" };
-
-	char* sp{ s };
-	++sp;
-	std::cout << *sp << std::endl;	// 왜 h가 출력되는가?
+	std::cout << std::addressof(pangram) << std::endl;
+	std::cout << (int)pangram << std::endl;
 	
 	//save("main.cpp");
 }
