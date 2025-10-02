@@ -14,18 +14,10 @@ int main()
 	// 그 메모리를 1부터 시작하는 정수로 채워라 
 	// 전체 합계를 출력하라
 
-	int* ip{};
 	int num{};
-	long long sum{};
-	std::cout << "원하는 개수를 입력하세요:";
 	std::cin >> num;
-	ip = new int[num];
-	for (size_t i = 0; i < num; i++)
-	{
-		ip[i] = i + 1;
-		sum += ip[i];
-	}
-	std::cout << num << "까지 숫자의 합은 " << sum << "입니다." << std::endl;
+
+	int val[num]; // 시험 문제 예시
 
 	//save("main.cpp");
 }
