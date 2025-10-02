@@ -13,7 +13,10 @@ int main()
 {
 	char s[]{ "the" };
 
-	std::cout << sizeof(s) << std::endl;	//왜 4바이트가 나오는가?
+	char* sp{ s };
+	++sp;
+	std::cout << *sp << std::endl;	// 왜 h가 출력되는가?
+	
 	//save("main.cpp");
 }
 
