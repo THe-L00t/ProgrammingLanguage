@@ -1,15 +1,13 @@
 //------------------------------------------------------------------------------------------------------------
-// reference - 객체에 붙일 수 있는 별명(alias)
-// qsort
-// 10.27 월 - 중간고사 
+// 같은 자료형을 갖는 많은 수의 자료가 있을 때 할 수 있는 일 - 정렬 
+// 동적 할당
+// 파일에 있는 많은 수의 자료를 읽어 와서 원하는 대로 처리 
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
-#include <random>
-#include <print>
 
 #include "save.h"
 
-char pangram[]{"the quick brown fox jumps over the lazy dog"};
+char pangram[]{"the quick brown fox jumps over the lazy dog"}; // 문자열 관련 ASCII 설명
 
 int main()
 {
