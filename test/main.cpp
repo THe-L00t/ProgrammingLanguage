@@ -16,11 +16,12 @@ int main()
 	while (true) {
 		// 자원을 이용하기 위한 단계
 		// 1 - 요청
-		new int[300'000'000]; // 1.2GB
+		int* p = new int[300'000'000]; // 1.2GB
 		// 2 - 사용
-
-		// 3 - 반환
-		
+		p[0] = 20251013;
+		// 3 - 반환			new - delete , new[] - delete[]
+		delete[] p;
+		std::cout << "자원 사용 - " << ++cnt << std::endl;
 	}
 
 	//save("main.cpp");
