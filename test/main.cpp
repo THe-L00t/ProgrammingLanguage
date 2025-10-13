@@ -10,20 +10,7 @@
 
 int main()
 {
-	// [문제] 사용자가 원하는 만큼 int 메모리를 확보한다. 
-	// free store는 얼마나 메모리를 줄 수 있나?
-	int cnt{};
-	while (true) {
-		// 자원을 이용하기 위한 단계
-		// 1 - 요청
-		int* p = new int[300'000'000]; // 1.2GB
-		// 2 - 사용
-		p[0] = 20251013;
-		// 3 - 반환			new - delete , new[] - delete[]
-		delete[] p;
-		//delete[] p;
-		std::cout << "자원 사용 - " << ++cnt << std::endl;
-	}
+	// 자원 할당과 자원 이용의 범위가 많이 달라진다. 다른 곳에서 해제할 경우 댕글링 포인터가 발생할 수 있다. 
 
 	//save("main.cpp");
 }
