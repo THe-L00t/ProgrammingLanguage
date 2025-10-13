@@ -19,10 +19,10 @@ int main()
 		unsigned int num;
 		std::cin >> num;
 
-		//int val[num];
-		//컴파일러가 어디에 메모리를 할당해야할지 모른다(컴파일 타임에 메모리가 결정되지 않음). 결국 이름을 붙일 수 없다. 
 		// 메모리를 free store에 요청할 수 밖에 없다. 
-		new int[num];
+		// 요청이 성공하면 시작번지를 받을 수 있다. 
+		// 요청이 실패하면 c++에서는 예외를 던진다. (메모리 관리자가)
+		int* p = new int[num];
 	}
 
 	//save("main.cpp");
