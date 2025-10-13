@@ -11,10 +11,17 @@
 
 int main()
 {
+	int cnt{};
 	// 자원이 고갈되었다면 c++은 예외를 던진다. 
 	while (true) {
-		new int[2025'1013];
-		
+		try {
+			new int[2025'1013];
+			std::cout << ++cnt << std::endl;
+		}
+		catch (const std::exception& e) {
+			std::cout << "메모리 고갈 - " << e.what() << std::endl;
+			break;
+		}
 
 		
 	}
