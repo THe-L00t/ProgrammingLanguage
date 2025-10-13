@@ -4,6 +4,7 @@
 // 파일에 있는 많은 수의 자료를 읽어 와서 원하는 대로 처리 
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
+#include <memory>
 
 #include "save.h"
 
@@ -13,10 +14,10 @@ int main()
 	// 자원이 할당과 이용을 자동화 - RAII
 
 	while (true) {
-		int* p = new int[100'0000];
-		// 바보 자료구조, raw pointer
+		std::unique_ptr<int[]> p = std::make_unique<int[]>(100'0000);
+		// smart pointer
 
-		delete[] p;
+		
 	}
 
 	//save("main.cpp");
