@@ -7,16 +7,14 @@
 
 #include "save.h"
 
+// [문제] "numberFile.txt"가 있다. 
+// 여기에는 몇 개인지 모르는 int값이 기록되어 있다. 
+// 읽어서 화면에 출력하라.
+
 
 int main()
 {
-	std::ofstream out{"numberFile.txt"};
-	for (size_t i = 0; i < 100; ++i)
-	{
-		std::print(out,"{:4}", i+1);
-	}
-	out << std::endl;
-	std::cout << std::endl;	// '\n'과 동일 - 입력버퍼가 flush되나 안되나의 차이
+	
 
 	//save("main.cpp");
 }
