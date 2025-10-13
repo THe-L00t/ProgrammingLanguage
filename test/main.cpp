@@ -14,8 +14,13 @@ int main()
 	// free store는 얼마나 메모리를 줄 수 있나?
 	int cnt{};
 	while (true) {
+		// 자원을 이용하기 위한 단계
+		// 1 - 요청
 		new int[300'000'000]; // 1.2GB
-		std::cout << "성공" << ++cnt << std::endl;
+		// 2 - 사용
+
+		// 3 - 반환
+		
 	}
 
 	//save("main.cpp");
