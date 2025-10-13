@@ -10,7 +10,14 @@
 
 int main()
 {
-	// 자원 할당과 자원 이용의 범위가 많이 달라진다. 다른 곳에서 해제할 경우 댕글링 포인터가 발생할 수 있다. 
+	// 자원이 할당과 이용을 자동화 - RAII
+
+	while (true) {
+		int* p = new int[100'0000];
+		// 바보 자료구조, raw pointer
+
+		delete[] p;
+	}
 
 	//save("main.cpp");
 }
