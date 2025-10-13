@@ -14,12 +14,16 @@ int main()
 	// 그 메모리를 1부터 시작하는 정수로 채워라 
 	// 전체 합계를 출력하라
 
-	int num{};
-	std::cin >> num;
-	
-	// 이 메모리는 실행 시 위치가 결정된다 
-	// 결국 free store에 할당해야한다
-	new int[num];	// 내 의지로 되는 것이 아님
+	while (true) {
+		std::cout << "int 몇 개가 필요한가? ";
+		unsigned int num;
+		std::cin >> num;
+
+		//int val[num];
+		//컴파일러가 어디에 메모리를 할당해야할지 모른다(컴파일 타임에 메모리가 결정되지 않음). 결국 이름을 붙일 수 없다. 
+		// 메모리를 free store에 요청할 수 밖에 없다. 
+		new int[num];
+	}
 
 	//save("main.cpp");
 }
