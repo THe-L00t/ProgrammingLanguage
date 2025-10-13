@@ -11,33 +11,11 @@
 int main()
 {
 	// [문제] 사용자가 원하는 만큼 int 메모리를 확보한다. 
-	// 그 메모리를 1부터 시작하는 정수로 채워라 
-	// 전체 합계를 출력하라
-
+	// free store는 얼마나 메모리를 줄 수 있나?
+	int cnt{};
 	while (true) {
-		std::cout << "int 몇 개가 필요한가? ";
-		unsigned int num;
-		std::cin >> num;
-
-		// 메모리를 free store에 요청할 수 밖에 없다. 
-		// 요청이 성공하면 시작번지를 받을 수 있다. 
-		// 요청이 실패하면 c++에서는 예외를 던진다. (메모리 관리자가)
-		int* p = new int[num];
-
-		for (size_t i = 0; i < num; i++)
-		{
-			*(p + i) = i + 1; //100,104,108 ...
-			//p[i] = i + 1;
-		}
-
-		// 합계를 출력
-		int sum{};
-		for (size_t i = 0; i < num; i++)
-		{
-			sum += *(p+i);
-			//sum += p[i];
-		}
-		std::cout << "1부터 " << num << "까지의 합계는 " << sum << "입니다." << std::endl;
+		new int[300'000'000]; // 1.2GB
+		std::cout << "성공" << ++cnt << std::endl;
 	}
 
 	//save("main.cpp");
