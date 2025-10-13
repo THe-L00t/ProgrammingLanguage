@@ -21,6 +21,7 @@ int main()
 		p[0] = 20251013;
 		// 3 - 반환			new - delete , new[] - delete[]
 		delete[] p;
+		//delete[] p;
 		std::cout << "자원 사용 - " << ++cnt << std::endl;
 	}
 
