@@ -14,7 +14,13 @@
 
 int main()
 {
-	
+	std::ifstream in{ "numberFile.txt" };
+	int num, cnt{};
+	while (in >> num) {	// 파일의 끝 EOF
+		std::cout << num << std::endl;
+		cnt++;
+	}
+	std::cout << cnt << "개 입니다. " << std::endl;
 
 	//save("main.cpp");
 }
