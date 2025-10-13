@@ -23,6 +23,21 @@ int main()
 		// 요청이 성공하면 시작번지를 받을 수 있다. 
 		// 요청이 실패하면 c++에서는 예외를 던진다. (메모리 관리자가)
 		int* p = new int[num];
+
+		for (size_t i = 0; i < num; i++)
+		{
+			*(p + i) = i + 1;
+			//p[i] = i + 1;
+		}
+
+		// 합계를 출력
+		int sum{};
+		for (size_t i = 0; i < num; i++)
+		{
+			sum += *(p+i);
+			//sum += p[i];
+		}
+		std::cout << "1부터 " << num << "까지의 합계는 " << sum << "입니다." << std::endl;
 	}
 
 	//save("main.cpp");
