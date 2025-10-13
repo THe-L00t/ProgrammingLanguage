@@ -20,7 +20,7 @@ int main()
 		}
 		catch (const std::exception& e) {
 			std::cout << "메모리 고갈 - " << e.what() << std::endl;
-			break;
+			return 2025; // 메인이 아니라면 exit(2025) 로 빠져나가기
 		}
 
 		
