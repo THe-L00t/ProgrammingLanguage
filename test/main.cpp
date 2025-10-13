@@ -11,11 +11,10 @@
 
 int main()
 {
-	// 자원이 할당과 이용을 자동화 - RAII
-
+	// 자원이 고갈되었다면 c++은 예외를 던진다. 
 	while (true) {
-		std::unique_ptr<int[]> p = std::make_unique<int[]>(100'0000);
-		// smart pointer
+		new int[2025'1013];
+		
 
 		
 	}
