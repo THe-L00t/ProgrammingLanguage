@@ -1,30 +1,22 @@
 //------------------------------------------------------------------------------------------------------------
-// 같은 자료형을 갖는 많은 수의 자료가 있을 때 할 수 있는 일 - 정렬 
-// 동적 할당
-// 파일에 있는 많은 수의 자료를 읽어 와서 원하는 대로 처리 
+// FILE I/O
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
-#include <memory>
+#include <fstream>
+#include <print>
 
 #include "save.h"
 
 
 int main()
 {
-	int cnt{};
-	// 자원이 고갈되었다면 c++은 예외를 던진다. 
-	while (true) {
-		try {
-			new int[2025'1013];
-			std::cout << ++cnt << std::endl;
-		}
-		catch (const std::exception& e) {
-			std::cout << "메모리 고갈 - " << e.what() << std::endl;
-			return 2025; // 메인이 아니라면 exit(2025) 로 빠져나가기
-		}
-
-		
+	std::ofstream out{"numberFile.txt"};
+	for (size_t i = 0; i < 100; ++i)
+	{
+		std::print(out,"{:4}", i+1);
 	}
+	out << std::endl;
+	std::cout << std::endl;	// '\n'과 동일 - 입력버퍼가 flush되나 안되나의 차이
 
 	//save("main.cpp");
 }
