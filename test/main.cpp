@@ -15,6 +15,9 @@
 int main()
 {
 	std::ifstream in{ "numberFile.txt" };
+	// in 객체의 메모리 크기는?	272byte
+
+
 	int num, cnt{};
 	while (in >> num) {	// 파일의 끝 EOF
 		std::cout << num << std::endl;
