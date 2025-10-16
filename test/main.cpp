@@ -14,6 +14,7 @@
 int main()
 {
 	std::ifstream in{ "몇개인지모르는int값들.txt" };
+	if (not in) return 2025;
 
 	int max = std::numeric_limits<int>::min();
 	int temp{}, cnt{}, offset{};
