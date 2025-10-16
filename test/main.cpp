@@ -14,12 +14,14 @@
 // 정렬된 int값을 화면에 모두 출력하라. 한 개의 int를 20칸에 맞추어라.
 #define mn 2000'0000
  
+int nums[mn]{};
+
 int main()
 {
 	std::ifstream in{ "몇개인지모르는int값들.txt" };
 	if (not in) return 404;
 
-	int* nums = new int[mn];
+	//int* nums = new int[mn];
 	int temp{};
 	size_t idx{};
 	while (in >> temp) {
@@ -29,12 +31,12 @@ int main()
 		return *(int*)a - *(int*)b;
 		});
 
-	for (size_t i = 0; i < mn; i++)
+	for (int& n : nums)
 	{
-		std::print("{:20}", nums[i]);
+		std::print("{:20}", n);
 	}
 
-	delete[] nums;
+	//delete[] nums;
 	//save("main.cpp");
 }
 
