@@ -16,8 +16,9 @@
 
 int main()
 {
-	int num['z' - 'a'+1]{};
+	int num['z' - 'a' + 1]{};
 	std::ifstream in{ "main.cpp" };
+	if (not in) return 404;
 	char temp{};
 	int cnt{};
 	while (in >> temp) {
