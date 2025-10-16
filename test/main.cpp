@@ -15,7 +15,10 @@
 int main()
 {
 	std::ifstream in{ "numberFile.txt" };
-	// 위의 코드를 두 줄로 나누지 않은 의도 = RAII
+	// 파일을 읽을때는 요청을 한다. 성공했는지 여부를 확인해야 한다
+	if (not in) {
+		return 20251026;
+	}
 
 
 	int num, cnt{};
