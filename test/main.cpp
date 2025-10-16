@@ -6,27 +6,17 @@
 
 #include "save.h"
 
-//[문제] e class에서 다운받은 "몇개인지모르는int값들.txt" 파일에는
-// int값이 저장되어 있다. 
-// 1. 모두 몇 개인지 출력하라
-// 2. 제일 큰 값을 찾아 출력하라
+//[문제] e class에서 다운받은 실행파일을 실행하면 폴더에 
+// "몇개인지모르는int값들.txt" 파일에 생성된다. 
+// 여기에는 정확하게 2000만개의 int값이 저장되어 있다. 
+// 오름차순으로 정렬하라.
+// 정렬된 int값을 화면에 모두 출력하라. 한 개의 int를 20칸에 맞추어라.
+
  
 int main()
 {
 	std::ifstream in{ "몇개인지모르는int값들.txt" };
-	if (not in) return 2025;
-
-	int max = std::numeric_limits<int>::min();
-	int temp{}, cnt{}, offset{};
-	while (in >> temp) {
-		++cnt;
-		if (max < temp) {
-			max = temp;
-			offset = cnt;
-		}
-	}
-	std::cout << "1. 모두 " << cnt << "개입니다. " << std::endl;
-	std::cout << "2. 가장 큰 값은 " << max <<"으로 "<< offset << "번째 값입니다. " << std::endl;
+	
 
 	//save("main.cpp");
 }
