@@ -23,12 +23,12 @@ int main()
 	int cnt{};
 	while (in >> temp) {
 		if (islower(temp)) {
-			num[temp - 'a']++;
+			++num[temp - 'a'];
 		} 
 	}
 	char c{ 'a' };
 	for (int& n : num) {
-		std::cout << (char)(c++) << "-" << n << std::endl;
+		std::cout << static_cast<char>(c++) << "-" << n << std::endl;
 	}
 
 	//save("main.cpp");
