@@ -15,7 +15,7 @@
 int main()
 {
 	std::ifstream in{ "numberFile.txt" };
-	// in 객체의 메모리 크기는?	272byte
+	// {} : uniform initializer
 
 
 	int num, cnt{};
