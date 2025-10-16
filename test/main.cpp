@@ -14,7 +14,7 @@
 // 정렬된 int값을 화면에 모두 출력하라. 한 개의 int를 20칸에 맞추어라.
 #define mn 2000'0000
  
-int nums[mn]{};
+int nums[mn]{};	// 컴파일 타임에 개수 정해짐, 동적할당 x 
 
 int main()
 {
