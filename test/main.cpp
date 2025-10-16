@@ -15,7 +15,7 @@
 int main()
 {
 	std::ifstream in{ "numberFile.txt" };
-	// {} : uniform initializer
+	// 위의 코드를 두 줄로 나누지 않은 의도 = RAII
 
 
 	int num, cnt{};
