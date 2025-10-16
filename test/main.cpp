@@ -25,7 +25,7 @@ int main()
 	while (in >> temp) {
 		nums[idx++] = temp;
 	}
-	qsort(&nums[0], mn,sizeof(int), [](const void* a, const void* b) {
+	qsort(nums, mn,sizeof(int), [](const void* a, const void* b) {
 		return *(int*)a - *(int*)b;
 		});
 
@@ -34,6 +34,7 @@ int main()
 		std::print("{:20}", nums[i]);
 	}
 
+	delete[] nums;
 	//save("main.cpp");
 }
 
