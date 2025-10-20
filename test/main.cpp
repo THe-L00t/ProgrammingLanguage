@@ -25,12 +25,14 @@ int main()
 			++num[temp - 'a'];
 		} 
 	}
-	char c{ 'a' };
+	/*char c{ 'a' };
 	for (int& n : num) {
 		std::cout << static_cast<char>(c++) << "-" << n << std::endl;
-	}
-	
-
+	}*/
+	char input{};
+	std::cout << "입력 - ";
+	std::cin >> input;
+	std::cout << "답 - " << input << "문자의 개수 - " << num[input - 'a'] << std::endl;
 
 	//save("main.cpp");
 }
