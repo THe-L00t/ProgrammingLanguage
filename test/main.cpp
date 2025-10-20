@@ -3,7 +3,7 @@
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
 #include <fstream>
-
+#include <string>
 
 #include "save.h"
 
@@ -17,7 +17,7 @@ int main()
 	std::ifstream in{ "main.cpp" };
 	std::ofstream out{ "´ë¹®ÀÚMAIN.CPP" };
 	if (not in) return 404;
-	char temp{};
+	std::string temp{};
 	int cnt{};
 	while (in >> temp) {
 		++cnt;
