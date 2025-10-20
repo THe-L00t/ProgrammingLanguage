@@ -29,15 +29,17 @@ int main()
 	if (not in) return 404;
 	// 단어개수가 실시간에 파악되었다
 	// 다음 문제를 해결하라
-	std::string* strings = new std::string[cnt];
-	unsigned idx{};
-	while (in >> strings[idx++]) {
 
+	std::string* strings = new std::string[cnt];
+	
+	for (size_t i = 0; i < cnt; ++i)
+	{
+		in >> strings[i];
 	}
 	qsort(strings, cnt, sizeof(std::string), [](const void* a, const void* b) {
 		return *(std::string*)a < *(std::string*)b? -1 : 1 ;
 		});
-	for (size_t i = 0; i < cnt; i++)
+	for (size_t i = 0; i < cnt; ++i)
 	{
 		std::cout << strings[i] << std::endl;
 	}
