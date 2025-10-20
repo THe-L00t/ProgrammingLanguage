@@ -7,32 +7,22 @@
 
 #include "save.h"
 
-//[문제] 지금 코딩하고 있는 파일은 main.cpp이다. 
-// 사용자가 입력한 문자가 몇 개나 사용되었는지 출력하라
-// 예) 입력 - a
-// 답 - a 문자의 개수 - 10
+//[문제] 지금 코딩하고 있는 파일은 "main.cpp"이다 
+// "main.cpp의 소문자를 모두 대문자로 바꿔 저장한 "MAIN.CPP"를 만들어라 
 
 
 int main()
 {
-	int num['z' - 'a' + 1]{};
 	std::ifstream in{ "main.cpp" };
+	std::ofstream out{ "대문자MAIN.CPP" };
 	if (not in) return 404;
 	char temp{};
 	int cnt{};
+	in >> std::noskipws;
 	while (in >> temp) {
-		if (islower(temp)) {
-			++num[temp - 'a'];
-		} 
+		out << static_cast<char>(toupper(temp));
 	}
-	/*char c{ 'a' };
-	for (int& n : num) {
-		std::cout << static_cast<char>(c++) << "-" << n << std::endl;
-	}*/
-	char input{};
-	std::cout << "입력 - ";
-	std::cin >> input;
-	std::cout << "답 - " << input << "문자의 개수 - " << num[input - 'a'] << std::endl;
+	
 
 	//save("main.cpp");
 }
