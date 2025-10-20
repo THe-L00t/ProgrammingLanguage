@@ -8,7 +8,8 @@
 #include "save.h"
 
 //[문제] 지금 코딩하고 있는 파일은 "main.cpp"이다 
-// "main.cpp의 소문자를 모두 대문자로 바꿔 저장한 "MAIN.CPP"를 만들어라 
+// 이 파일에는 모두 몇 단어가 있는지 출력하라 
+//(단어) 공백으로 분리된 문자 집합을 말한다. 
 
 
 int main()
@@ -18,11 +19,10 @@ int main()
 	if (not in) return 404;
 	char temp{};
 	int cnt{};
-	in >> std::noskipws;
 	while (in >> temp) {
-		out << static_cast<char>(toupper(temp));
+		++cnt;
 	}
-	
+	std::cout << cnt << "개 입니다.";
 
 	//save("main.cpp");
 }
