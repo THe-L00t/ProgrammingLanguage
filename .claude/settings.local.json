@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if exist \"%APPDATA%\\Claude\" rmdir /s /q \"%APPDATA%\\Claude\")",
+      "Bash(set ANTHROPIC_API_KEY=)",
+      "Bash(exit)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
