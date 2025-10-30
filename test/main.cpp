@@ -63,6 +63,10 @@ int main()
 	change(string, string)
 	change(string&, string&)
 
+	4. 핵심 키워드 : free store에 메모리를 계속 요청, 고갈되며 프로그램 사망
+	힙(HEAP) 이라는 단어 쓰지 말 것 
+
+
 
 
 
