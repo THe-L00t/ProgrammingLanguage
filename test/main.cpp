@@ -13,7 +13,7 @@ struct Point2D { //alignment = 8byte
 	int y{};
 
 	void show() {	//show(this) : hidden argument,  this : 모든 멤버함수의 첫번째 인자
-		std::cout << "(" << x << ", " << y << ")" << std::endl;
+		std::cout << "(" << this->x << ", " << (*this).y << ")" << std::endl;
 	}
 };
 
