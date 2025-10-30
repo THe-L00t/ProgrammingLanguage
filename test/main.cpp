@@ -8,7 +8,7 @@
 
 #include "save.h"
 
-struct Point2D {
+struct Point2D { //alignment = 8byte
 	int x{};
 	int y{};
 
