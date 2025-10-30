@@ -12,12 +12,18 @@ struct Point2D {
 	int x{};
 	int y{};
 
-	void function();
+	void show() {
+		std::cout << "(" << x << ", " << y << ")" << std::endl;
+	}
 };
 
 int main()
 {
+	Point2D points[100];
 
+	for (Point2D p : points) {
+		p.show();
+	}
 	//save("main.cpp");
 }
 
