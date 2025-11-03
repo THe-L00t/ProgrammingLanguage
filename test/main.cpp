@@ -8,14 +8,15 @@
 
 #include "save.h"
 
-class Dog {	//class와 struct의 차이 (private / public)
-
+class Dog {	//맴버 변수를 private하게 -> class
+private:
+	std::string name{};
 };
 
 int main()
 {
 	Dog dog;
-
+	dog.name = "asd";	//외부에서 맘대로 접근하면 안된다. 
 	//save("main.cpp");
 }
 
