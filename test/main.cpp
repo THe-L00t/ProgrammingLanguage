@@ -14,11 +14,13 @@ class STRING {
 public:
 	STRING(){}
 	STRING(const char* c) {
-		size = strnlen(c,1000000);
+		size = strlen(c);
 		data = new char[size];
 		memcpy(data, c, size);
 	}
-
+	~STRING() {
+		delete[] data;
+	}
 
 	size_t length() {
 		return size;
