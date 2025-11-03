@@ -5,6 +5,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <Windows.h>
+#include <mmsystem.h>
+#pragma comment(lib,"winmm.lib")
 
 #include "save.h"
 
@@ -15,15 +18,16 @@ public:
 	Dog() {					//胶其既 窃荐 - default constructor
 		name = "大大捞";
 		std::cout << "叼弃飘 积己磊" << endl;	 //defalut ctor
+		PlaySound(L"Dog-Bark.wav", 0, SND_FILENAME | SND_ASYNC);
 	}
 
 	Dog(std::string n) :name{ n } {}
 
-	~Dog() {	//
+	~Dog() {	//destructor
 		std::cout << "家戈磊" << std::endl;
 	}
 
-	void show() {
+	void bark() {
 		std::cout << name << std::endl;
 	}
 
@@ -34,11 +38,7 @@ private:
 
 int main()
 {
-	Dog dogs[10]{ std::string{"内内" } ,  "焊府"s ,  "檬内"s };
 
-	for (Dog& d : dogs) {
-		d.show();
-	}
 
 	//save("main.cpp");
 }
