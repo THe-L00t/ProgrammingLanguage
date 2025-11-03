@@ -13,23 +13,22 @@ using namespace std;
 class STRING {
 public:
 	STRING(){}
-	STRING(const char* c) : size{strlen(c)} {
-		data = new char[size];
-		memcpy(data, c, size);
+	STRING(const char* c) : len{ strlen(c) }, data{new char[len]} {
+		memcpy(data, c, len);
 	}
 	~STRING() {
 		delete[] data;
 	}
 
 	size_t length() {
-		return size;
+		return len;
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const STRING& s) {
 		return os << s.data;
 	}
 private:
-	size_t size{};
+	size_t len{};
 	char* data;
 };
 
