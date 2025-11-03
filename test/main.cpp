@@ -8,12 +8,16 @@
 
 #include "save.h"
 
+using namespace std;
+
 class Dog {	//맴버 변수를 private하게 -> class
 public:
-	Dog() {	//생성자 
+	Dog() {					//스페셜 함수 - default constructor
 		name = "댕댕이";
 	}
-	Dog(std::string& n) :name{ n } {}
+
+	Dog(std::string n) :name{ n } {}
+
 	void show() {
 		std::cout << name << std::endl;
 	}
@@ -23,7 +27,7 @@ private:
 
 int main()
 {
-	Dog dogs[10];	
+	Dog dogs[10]{ std::string{"코코" } ,  "보리"s ,  "초코"s };
 
 	for (Dog& d : dogs) {
 		d.show();
