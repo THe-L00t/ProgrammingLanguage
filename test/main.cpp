@@ -22,6 +22,8 @@ public:
 	void show() {
 		std::cout << name << std::endl;
 	}
+
+//Ä¸½¶È­(capsulization), Ãß»óÈ­(abstraction), Á¤º¸ Àº´Ð(infomation hiding)
 private:
 	std::string name{};
 };
