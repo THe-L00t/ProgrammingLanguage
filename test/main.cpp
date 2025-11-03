@@ -15,7 +15,7 @@ public:
 	STRING(){}
 	STRING(const char* c) : len{ strlen(c) } {
 		data = new char[len];
-		memcpy(data, c, len);
+		memcpy(data, c, len);	//초고속 복사 
 	}
 	~STRING() {
 		delete[] data;
