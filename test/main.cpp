@@ -8,7 +8,9 @@
 
 #include "save.h"
 
+class Dog {	//class와 struct의 차이 (private / public)
 
+};
 
 int main()
 {
