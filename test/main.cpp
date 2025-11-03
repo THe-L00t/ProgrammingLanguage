@@ -15,8 +15,8 @@ private:
 
 int main()
 {
-	Dog dog;
-	dog.name = "asd";	//외부에서 맘대로 접근하면 안된다. 
+	Dog dog;	//무조건 메모리 생성된 후 생성자 함수를 호출
+
 	//save("main.cpp");
 }
 
