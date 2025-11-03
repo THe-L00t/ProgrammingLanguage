@@ -14,6 +14,7 @@ class Dog {	//¸É¹ö º¯¼ö¸¦ privateÇÏ°Ô -> class
 public:
 	Dog() {					//½ºÆä¼È ÇÔ¼ö - default constructor
 		name = "´ó´óÀÌ";
+		std::cout << "default ctor" << endl;
 	}
 
 	Dog(std::string n) :name{ n } {}
