@@ -23,6 +23,10 @@ public:
 	size_t length() {
 		return size;
 	}
+
+	friend std::ostream& operator<<(std::ostream& os, const STRING& s) {
+		return os << s.data;
+	}
 private:
 	size_t size{};
 	char* data;
@@ -34,7 +38,7 @@ int main()
 {
 	STRING s{ "C++ 클래스 만들때 special functions - 6" };
 	std::cout << s.length() << std::endl;
-                   
+	std::cout << s << std::endl;
 
 	//save("main.cpp");
 }
