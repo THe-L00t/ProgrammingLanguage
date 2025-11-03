@@ -13,7 +13,7 @@ public:
 	Dog() {	//생성자 
 		name = "댕댕이";
 	}
-
+	Dog(std::string& n) :name{ n } {}
 	void show() {
 		std::cout << name << std::endl;
 	}
@@ -23,9 +23,11 @@ private:
 
 int main()
 {
-	Dog dog;	//무조건 메모리 생성된 후 생성자 함수를 호출
+	Dog dogs[10];	
 
-	dog.show();
+	for (Dog& d : dogs) {
+		d.show();
+	}
 
 	//save("main.cpp");
 }
