@@ -14,10 +14,14 @@ class Dog {	//맴버 변수를 private하게 -> class
 public:
 	Dog() {					//스페셜 함수 - default constructor
 		name = "댕댕이";
-		std::cout << "default ctor" << endl;
+		std::cout << "디폴트 생성자" << endl;	 //defalut ctor
 	}
 
 	Dog(std::string n) :name{ n } {}
+
+	~Dog() {	//
+		std::cout << "소멸자" << std::endl;
+	}
 
 	void show() {
 		std::cout << name << std::endl;
