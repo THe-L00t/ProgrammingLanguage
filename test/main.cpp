@@ -9,6 +9,14 @@
 #include "save.h"
 
 class Dog {	//맴버 변수를 private하게 -> class
+public:
+	Dog() {	//생성자 
+		name = "댕댕이";
+	}
+
+	void show() {
+		std::cout << name << std::endl;
+	}
 private:
 	std::string name{};
 };
@@ -16,6 +24,8 @@ private:
 int main()
 {
 	Dog dog;	//무조건 메모리 생성된 후 생성자 함수를 호출
+
+	dog.show();
 
 	//save("main.cpp");
 }
