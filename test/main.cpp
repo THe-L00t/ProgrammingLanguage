@@ -13,7 +13,8 @@ using namespace std;
 class STRING {
 public:
 	STRING(){}
-	STRING(const char* c) : len{ strlen(c) }, data{new char[len]} {
+	STRING(const char* c) : len{ strlen(c) } {
+		data = new char[len];
 		memcpy(data, c, len);
 	}
 	~STRING() {
