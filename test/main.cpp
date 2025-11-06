@@ -10,29 +10,6 @@
 
 using namespace std;
 
-class STRING {
-public:
-	STRING(){}
-	STRING(const char* c) : len{ strlen(c) } {
-		data = new char[len];
-		memcpy(data, c, len);	//초고속 복사 
-	}
-	~STRING() {
-		delete[] data;
-	}
-
-	size_t length() {
-		return len;
-	}
-
-	friend std::ostream& operator<<(std::ostream& os, const STRING& s) {
-		return os << s.data;
-	}
-private:
-	size_t len{};
-	char* data;
-};
-
 
 
 int main()
