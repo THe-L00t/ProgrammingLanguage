@@ -10,6 +10,7 @@ STRING::STRING()
 	:id{++sid}
 {
 	std::println("[{:4}] 디폴트 생성 - 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
+	// print에 주소 사용 시 주의
 }
 
 STRING::STRING(const char* c) 
