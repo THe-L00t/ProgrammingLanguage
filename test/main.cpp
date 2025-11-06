@@ -14,8 +14,11 @@ using namespace std;
 
 int main()
 {
-	STRING s1{ "123" };
-	STRING s2{ "12345" };
+	// 프로그램이 죽는 이유
+	STRING s1{ "12345" };
+	STRING s2 = s1;
+	std::cout << s1 << std::endl;
+	std::cout << s2 << std::endl;
 	//save("main.cpp");
 }
 
