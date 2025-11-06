@@ -17,7 +17,7 @@
 
 class STRING {
 public:
-	STRING();
+	//STRING();
 	STRING(const char* c);
 	~STRING();
 

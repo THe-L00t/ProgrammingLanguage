@@ -15,9 +15,7 @@ using namespace std;
 
 int main()
 {
-	STRING s{ "C++ 클래스 만들때 special functions - 6" };
-	std::cout << s.length() << std::endl;
-	std::cout << s << std::endl;
+	STRING s;	// 빨간줄의 이유
 
 	//save("main.cpp");
 }
