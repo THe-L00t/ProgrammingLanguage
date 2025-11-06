@@ -12,11 +12,14 @@
 using namespace std;
 
 
+STRING s{ "123" };
 
 int main()
 {
+	std::cout << "------------------------- 메인 시작" << std::endl;
 	STRING s{ "1" };
 
+	std::cout << "------------------------- 메인 끝" << std::endl;
 	//save("main.cpp");
 }
 
