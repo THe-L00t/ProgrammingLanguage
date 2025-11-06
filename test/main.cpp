@@ -12,15 +12,9 @@
 
 using namespace std;
 
-
-STRING s{ "123" };
-
 int main()
 {
-	std::cout << "------------------------- 메인 시작" << std::endl;
-	STRING s{ "1" };
-	std::unique_ptr<STRING> p{new STRING{ "55555" } };	// 이름을 주었을때와 주지 않았을때의 차이  
-	std::cout << "------------------------- 메인 끝" << std::endl;
+	STRING s[]{ "1","234", "56789" };
 	//save("main.cpp");
 }
 
