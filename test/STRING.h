@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-
+// 헤더에는 클래스를 선언한다
 class STRING {
 public:
 	STRING();
