@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <memory>
 
 #include "STRING.h"
 #include "save.h"
@@ -18,7 +19,7 @@ int main()
 {
 	std::cout << "------------------------- 메인 시작" << std::endl;
 	STRING s{ "1" };
-
+	std::unique_ptr<STRING>{new STRING{ "55555" } };
 	std::cout << "------------------------- 메인 끝" << std::endl;
 	//save("main.cpp");
 }
