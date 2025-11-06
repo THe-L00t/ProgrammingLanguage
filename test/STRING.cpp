@@ -10,7 +10,7 @@ STRING::STRING()
 	:id{++sid}
 {
 	std::println("[{:4}] 叼弃飘 积己 - 林家:{:014}, 俺荐:{:<3}, 臂林家:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
-	// print俊 林家 荤侩 矫 林狼
+
 }
 
 STRING::STRING(const char* c) 
@@ -18,12 +18,13 @@ STRING::STRING(const char* c)
 {
 	data = new char[len];
 	memcpy(data, c, len);	//檬绊加 汗荤 - DMA
-	std::cout << "积己磊" << std::endl;
+	std::println("[{:4}] 积己磊      - 林家:{:014}, 俺荐:{:<3}, 臂林家:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
 }
 
 STRING::~STRING()
 {
-	delete[] data;
+	std::println("[{:4}] 家戈磊      - 林家:{:014}, 俺荐:{:<3}, 臂林家:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
+	if(data not_eq nullptr) delete[] data;
 }
 
 size_t STRING::length()

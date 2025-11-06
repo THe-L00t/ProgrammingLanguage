@@ -15,7 +15,7 @@ using namespace std;
 
 int main()
 {
-	STRING s;	
+	STRING s{ "1" };
 
 	//save("main.cpp");
 }
