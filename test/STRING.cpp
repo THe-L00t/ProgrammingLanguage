@@ -9,7 +9,7 @@ unsigned STRING::sid{};
 STRING::STRING()
 	:id{++sid}
 {
-	std::print("[{:4}] 林家:{:014}, 俺荐:{:<3}, 臂林家:{:014}", id, this, len, data);
+	std::println("[{:4}] 叼弃飘 积己 - 林家:{:014}, 俺荐:{:<3}, 臂林家:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
 }
 
 STRING::STRING(const char* c) 
