@@ -1,5 +1,5 @@
 #include "STRING.h"
-
+//CPP에서 클래스를 정의한다.
 STRING::STRING()
 {
 }
