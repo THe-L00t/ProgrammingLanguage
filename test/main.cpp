@@ -15,7 +15,7 @@ using namespace std;
 
 int main()
 {
-	STRING s;	// 빨간줄의 이유
+	STRING s;	//생성자를 전혀 코딩하지 않아도 동작한다. 생성자가 special한 이유이다 
 
 	//save("main.cpp");
 }

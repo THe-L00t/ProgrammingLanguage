@@ -18,7 +18,7 @@
 class STRING {
 public:
 	//STRING();
-	STRING(const char* c);
+	//STRING(const char* c);
 	~STRING();
 
 	size_t length();
