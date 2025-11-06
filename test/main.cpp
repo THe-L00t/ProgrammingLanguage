@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 
+#include "STRING.h"
 #include "save.h"
 
 using namespace std;
