@@ -32,6 +32,8 @@ public:
 private:
 	size_t len{};
 	char* data{ nullptr };
+	unsigned id;
+	static unsigned sid;	//static 
 };
 
 
