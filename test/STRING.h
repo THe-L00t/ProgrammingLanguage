@@ -12,9 +12,9 @@
 	4. STRING& operator=( const STRING& )	: copy assignment operator
 
 	5. STRING( STRING&& )					: move constructor
-	6. 
+	6. STRING& operator=( STRING&& )		: move assignment operator
 */
-// && r-value reference  
+
 class STRING {
 public:
 	STRING();
