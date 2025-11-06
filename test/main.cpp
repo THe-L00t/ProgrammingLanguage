@@ -12,10 +12,10 @@
 
 using namespace std;
 
-STRING s[]{ "1","234", "56789" };
 int main()
 {
-	
+	STRING s1{ "123" };
+	STRING s2{ "12345" };
 	//save("main.cpp");
 }
 

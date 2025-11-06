@@ -22,9 +22,10 @@ STRING::STRING(const char* c)
 }
 
 STRING::~STRING()
-{
+{	//이 클래스는 생성시에 자원을 확보한 클래스이다. 
+	//소멸되기 직전에 호출되는 함수인 소멸자에서 자원을 해제해 주어야한다. 
 	std::println("[{:4}] 소멸자      - 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
-	if(data not_eq nullptr) delete[] data;
+	delete[] data;
 }
 
 size_t STRING::length()
