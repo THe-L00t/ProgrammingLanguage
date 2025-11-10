@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
 	STRING s1{ "12345" };
-	STRING s2 = s1;				// 복사생성자
+	STRING s2 = s1;				// 복사생성자. 복사생성의 경우 클래스가 포인터로 다른 구역을 가리키는 순간 문제가 생긴다 
 	std::cout << s1 << std::endl;
 	std::cout << s2 << std::endl;
 	//save("main.cpp");
