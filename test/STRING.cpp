@@ -43,10 +43,12 @@ STRING::STRING(const STRING& other)
 
 STRING& STRING::operator=(const STRING& other)
 {
+	if (this == &other) return *this;	//자신과 같을경우 바로 반환
 	delete[] data;
 	len = other.len;
 	data = new char[len];
 	memcpy(data, other.data, len);
+	std::println("[{:4}] 복사할당연산자- 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
 	return *this;
 }
 
