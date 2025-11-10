@@ -14,11 +14,12 @@ using namespace std;
 
 int main()
 {
-	STRING s[]{ "1","22","333","4444","55555" };
-	for (const STRING& c : s) {	//c++ const consistency
-		std::cout << c << std::endl;
-		//c.show(); -> 한정자 맞춰주기 
-	}
+	STRING s1{ "2025년" };
+	STRING s2{ "11월 10일" };
+	s2 = s1;
+
+	std::cout << s1 << std::endl;
+	std::cout << s2 << std::endl;
 	//save("main.cpp");
 }
 

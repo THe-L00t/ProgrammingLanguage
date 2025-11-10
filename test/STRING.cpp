@@ -43,6 +43,7 @@ STRING::STRING(const STRING& other)
 
 STRING& STRING::operator=(const STRING& other)
 {
+	delete[] data;
 	len = other.len;
 	data = new char[len];
 	memcpy(data, other.data, len);
