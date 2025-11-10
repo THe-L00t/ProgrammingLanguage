@@ -26,6 +26,9 @@ STRING::~STRING()
 	//소멸되기 직전에 호출되는 함수인 소멸자에서 자원을 해제해 주어야한다. 
 	std::println("[{:4}] 소멸자        - 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
 	delete[] data;
+	//쓸데 없는 코드 
+	//len = 0;
+	//data = nullptr;
 }
 
 STRING::STRING(const STRING& other)
