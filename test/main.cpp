@@ -15,7 +15,7 @@ using namespace std;
 int main()
 {
 	STRING s[]{ "1","22","333","4444","55555" };
-	for (STRING& c : s) {	//레퍼런스 사용으로 메모리 최적화(?)
+	for (const STRING& c : s) {	//레퍼런스 사용으로 메모리 최적화(?)
 		std::cout << c << std::endl;
 	}
 	//save("main.cpp");
