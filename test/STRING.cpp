@@ -28,8 +28,10 @@ STRING::~STRING()
 	delete[] data;
 }
 
-STRING::STRING(const STRING&)
+STRING::STRING(const STRING& other)
+	:id{ ++sid }
 {
+	//±Ì¿∫ ∫πªÁ
 }
 
 STRING& STRING::operator=(const STRING&)
