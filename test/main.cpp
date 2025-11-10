@@ -14,9 +14,8 @@ using namespace std;
 
 int main()
 {
-	// 프로그램이 죽는 이유	:	s2가 먼저 사라지며 같이 가리키고 있던 free-stroe메모리를 반환, 댕글링 포인터 
 	STRING s1{ "12345" };
-	STRING s2 = s1;
+	STRING s2 = s1;				// 복사생성자
 	std::cout << s1 << std::endl;
 	std::cout << s2 << std::endl;
 	//save("main.cpp");

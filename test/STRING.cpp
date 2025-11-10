@@ -28,6 +28,15 @@ STRING::~STRING()
 	delete[] data;
 }
 
+STRING::STRING(const STRING&)
+{
+}
+
+STRING& STRING::operator=(const STRING&)
+{
+	// TODO: 여기에 return 문을 삽입합니다.
+}
+
 size_t STRING::length()
 {
 	return len;

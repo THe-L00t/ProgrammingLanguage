@@ -22,7 +22,8 @@ public:
 	STRING(const char* c);
 	~STRING();
 
-
+	STRING(const STRING&);
+	STRING& operator=(const STRING&);
 	//operator overloading
 	friend std::ostream& operator<<(std::ostream& os, const STRING& s) {
 		return os << s.data;
