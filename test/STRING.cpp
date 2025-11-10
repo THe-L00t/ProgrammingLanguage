@@ -32,6 +32,9 @@ STRING::STRING(const STRING& other)
 	:id{ ++sid }
 {
 	//±Ì¿∫ ∫πªÁ
+	len = other.len;
+	data = new char[len];
+	memcpy(data, other.data, len);
 }
 
 STRING& STRING::operator=(const STRING&)
