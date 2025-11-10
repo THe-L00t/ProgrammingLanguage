@@ -37,9 +37,12 @@ STRING::STRING(const STRING& other)
 	memcpy(data, other.data, len);
 }
 
-STRING& STRING::operator=(const STRING&)
+STRING& STRING::operator=(const STRING& other)
 {
-	// TODO: 여기에 return 문을 삽입합니다.
+	len = other.len;
+	data = new char[len];
+	memcpy(data, other.data, len);
+	return *this;
 }
 
 size_t STRING::length()
