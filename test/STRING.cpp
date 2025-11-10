@@ -52,7 +52,7 @@ STRING& STRING::operator=(const STRING& other)
 	return *this;
 }
 
-size_t STRING::length()
+size_t STRING::length() const
 {
 	return len;
 }

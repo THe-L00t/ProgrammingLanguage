@@ -14,12 +14,16 @@ using namespace std;
 
 int main()
 {
-	STRING s1{ "2025년" };
-	STRING s2{ "11월 10일" };
-	s2 = s1;
+	STRING s[]{ "333", "1", "55555", "4444", "22" };
 
-	std::cout << s1 << std::endl;
-	std::cout << s2 << std::endl;
+	//[문제] s를 글자수 기준 오름차순으로 정렬하라
+	qsort(s, sizeof(s) / sizeof(STRING), sizeof(STRING), [](const void* a, const void* b) {
+		return (*(STRING*)a).length() < (*(STRING*)b).length() ? -1 : 1;
+		});
+	
+	for (const STRING& s : s) {
+		std::cout << s << std::endl;
+	}
 	//save("main.cpp");
 }
 

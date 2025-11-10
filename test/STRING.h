@@ -29,7 +29,7 @@ public:
 		return os << s.data;
 	}
 	//interface : 멤버변수를 바깥으로 노출
-	size_t length();
+	size_t length() const;	//정렬에 필요한 getter
 	
 	
 private:
