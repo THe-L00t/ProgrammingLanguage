@@ -25,9 +25,9 @@ public:
 	STRING(const STRING&);
 	STRING& operator=(const STRING&);
 	//operator overloading
-	friend std::ostream& operator<<(std::ostream& os, const STRING& s) {
-		return os << s.data;
-	}
+	friend std::ostream& operator<<(std::ostream& os, const STRING& s);
+
+	friend STRING operator+(const STRING& a, const STRING& b);
 	//interface : 멤버변수를 바깥으로 노출
 	size_t length() const;	//정렬에 필요한 getter
 	

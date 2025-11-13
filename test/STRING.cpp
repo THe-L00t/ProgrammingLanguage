@@ -57,3 +57,15 @@ size_t STRING::length() const
 {
 	return len;
 }
+
+std::ostream& operator<<(std::ostream& os, const STRING& s)
+{
+	return os << s.data;
+}
+
+STRING operator+(const STRING& lhs, const STRING& rhs)
+{
+	const char* a = lhs.data;
+	const char* b = rhs.data;
+	return STRING(a + b);
+}
