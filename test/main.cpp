@@ -18,8 +18,8 @@ int main()
 
 	//[문제] s를 글자수 기준 오름차순으로 정렬하라
 	qsort(s, sizeof(s) / sizeof(STRING), sizeof(STRING), [](const void* a, const void* b) {
-		return (*(STRING*)a).length() < (*(STRING*)b).length() ? -1 : 1;
-		});
+		return int((*(STRING*)a).length() - (*(STRING*)b).length());
+		});	// 인자를 STRING으로 다시 받아오게되면 복사생성자가 많이 호출 
 	
 	for (const STRING& s : s) {
 		std::cout << s << std::endl;
