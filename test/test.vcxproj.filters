@@ -13,18 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\STRING">
+      <UniqueIdentifier>{78bda8e0-c259-49f1-b20c-6f410ddae933}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\save">
+      <UniqueIdentifier>{8f35e98a-0e33-4a21-ad11-4d42d30d1c93}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="STRING.cpp">
+      <Filter>소스 파일\STRING</Filter>
+    </ClCompile>
     <ClCompile Include="save.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\save</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="STRING.h">
+      <Filter>소스 파일\STRING</Filter>
+    </ClInclude>
     <ClInclude Include="save.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\save</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
