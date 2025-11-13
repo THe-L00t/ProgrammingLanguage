@@ -15,6 +15,7 @@ extern bool observe;
 
 int main()
 {
+	observe = true;
 	STRING s1{ "2025년 11월 13일" };
 	STRING s2{ " 오늘은 수능 시험일" };
 	
