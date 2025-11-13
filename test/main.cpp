@@ -11,11 +11,12 @@
 #include "save.h"
 
 using namespace std;
+extern bool observe;
 
 int main()
 {
 	STRING s[]{ "333", "1", "55555", "4444", "22" };
-
+	observe = true;
 	//[문제] s를 글자수 기준 오름차순으로 정렬하라
 	qsort(s, sizeof(s) / sizeof(STRING), sizeof(STRING), [](const void* a, const void* b) {
 		return int(((STRING*)a)->length() - ((STRING*)b)->length());
