@@ -53,6 +53,16 @@ STRING& STRING::operator=(const STRING& other)
 	return *this;
 }
 
+STRING STRING::operator+(STRING& rhs)
+{
+	STRING temp;
+	temp.len = len + rhs.len;
+	temp.data = new char[temp.len];
+	memcpy(temp.data, data, len);
+	memcpy(temp.data + len, rhs.data, rhs.len);
+	return temp;
+}
+
 size_t STRING::length() const
 {
 	return len;
@@ -68,11 +78,4 @@ std::ostream& operator<<(std::ostream& os, const STRING& s)
 	return os << s.data;
 }
 
-STRING operator+(const STRING& lhs, const STRING& rhs)
-{
-	size_t l = lhs.len + rhs.len;
-	char* d = new char[l];
-	memcpy(d, lhs.data, lhs.len);
-	memcpy(d + lhs.len, rhs.data, rhs.len);
-	return STRING(l,d);
-}
+
