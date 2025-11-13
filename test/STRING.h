@@ -33,7 +33,7 @@ public:
 	
 	
 private:
-	STRING(size_t, char*);
+
 
 	size_t len{};
 	char* data{ nullptr };

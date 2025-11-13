@@ -68,11 +68,6 @@ size_t STRING::length() const
 	return len;
 }
 
-STRING::STRING(size_t l, char* d)
-	:id{++sid}, len{l}, data{d}
-{
-}
-
 std::ostream& operator<<(std::ostream& os, const STRING& s)
 {
 	return os << s.data;
