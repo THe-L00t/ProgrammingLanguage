@@ -15,10 +15,10 @@ extern bool observe;
 
 int main()
 {
-	std::string s1{ "2025년 11월 13일" };
-	std::string s2{ " 오늘은 수능 시험일" };
+	STRING s1{ "2025년 11월 13일" };
+	STRING s2{ " 오늘은 수능 시험일" };
 	
-	std::string s3 = s1 + s2;		
+	STRING s3 = s1 + s2;		
 
 	std::cout << s3 << std::endl;
 	//save("main.cpp");

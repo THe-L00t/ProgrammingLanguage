@@ -58,6 +58,11 @@ size_t STRING::length() const
 	return len;
 }
 
+STRING::STRING(size_t l, char* d)
+	:id{++sid}, len{l}, data{d}
+{
+}
+
 std::ostream& operator<<(std::ostream& os, const STRING& s)
 {
 	return os << s.data;
@@ -65,7 +70,9 @@ std::ostream& operator<<(std::ostream& os, const STRING& s)
 
 STRING operator+(const STRING& lhs, const STRING& rhs)
 {
-	const char* a = lhs.data;
-	const char* b = rhs.data;
-	return STRING(a + b);
+	size_t l = lhs.len + rhs.len;
+	char* d = new char[l];
+	memcpy(d, lhs.data, lhs.len);
+	memcpy(d + lhs.len, rhs.data, rhs.len);
+	return STRING(l,d);
 }

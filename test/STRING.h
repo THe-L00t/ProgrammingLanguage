@@ -19,7 +19,8 @@ class STRING {
 public:
 	//special 
 	STRING();
-	STRING(const char* c);
+	STRING(const char*);
+	
 	~STRING();
 
 	STRING(const STRING&);
@@ -33,6 +34,8 @@ public:
 	
 	
 private:
+	STRING(size_t, char*);
+
 	size_t len{};
 	char* data{ nullptr };
 	unsigned id;
