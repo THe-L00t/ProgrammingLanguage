@@ -53,7 +53,7 @@ STRING& STRING::operator=(const STRING& other)
 	return *this;
 }
 
-STRING STRING::operator+(STRING& rhs)
+STRING STRING::operator+(const STRING& rhs)
 {
 	STRING temp;
 	temp.len = len + rhs.len;

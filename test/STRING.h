@@ -26,14 +26,13 @@ public:
 	STRING(const STRING&);
 	STRING& operator=(const STRING&);
 	//operator overloading
-	STRING operator+(STRING&);
+	STRING operator+(const STRING&);
 	friend std::ostream& operator<<(std::ostream& os, const STRING& s);
 	//interface : 멤버변수를 바깥으로 노출
 	size_t length() const;	//정렬에 필요한 getter
 	
 	
 private:
-
 
 	size_t len{};
 	char* data{ nullptr };
