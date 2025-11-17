@@ -81,7 +81,12 @@ STRING operator+(const char* lhs, const STRING& rhs)
 
 std::ostream& operator<<(std::ostream& os, const STRING& s)
 {
-	return os << s.data;
+	for (size_t i = 0; i < s.len; i++)
+	{
+		os << s.data[i];
+	}
+	//return os << s.data;
+	return os;
 }
 
 
