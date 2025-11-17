@@ -20,7 +20,7 @@ int main()
 	observe = true;
 	STRING s{ "2025년 11월 17일" };
 
-	std::cout << s << std::endl;// ostream의 멤버 함수로는 작성할 수 없다.
+	ostream& opeartor << (ostream&, const STRING&);
 
 
 	//save("main.cpp");
