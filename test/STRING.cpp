@@ -71,10 +71,11 @@ size_t STRING::length() const
 STRING operator+(const char* lhs, const STRING& rhs)
 {
 	STRING temp;
-	temp.len = strlen(lhs) + rhs.len;
+	size_t len{ strlen(lhs) };
+	temp.len = len + rhs.len;
 	temp.data = new char[temp.len];
-	memcpy(temp.data, lhs, strlen(lhs));
-	memcpy(temp.data + strlen(lhs), rhs.data, rhs.len);
+	memcpy(temp.data, lhs, len);
+	memcpy(temp.data + len, rhs.data, rhs.len);
 	return temp;
 }
 

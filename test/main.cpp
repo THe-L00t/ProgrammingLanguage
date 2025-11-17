@@ -18,9 +18,9 @@ extern bool observe;
 int main()
 {
 	observe = true;
-	STRING s{ "두번째 내용" };
-	STRING t = "첫번째 내용" + s;
-	//위의 내용을 살려보자 
+	STRING s{ "2025년 11월 17일" };
+
+	std::cout << s << std::endl;
 
 
 	//save("main.cpp");
