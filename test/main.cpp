@@ -17,10 +17,11 @@ extern bool observe;
 
 int main()
 {
-	observe = true;
-	STRING s{ "2025년 11월 17일" };
+	int n = 1;
 
-	ostream& opeartor << (ostream&, const STRING&);
+	int a = ++n; //전위증감 연산자와 후위증감연산자의 차이
+
+	std::cout << a << std::endl;
 
 
 	//save("main.cpp");
