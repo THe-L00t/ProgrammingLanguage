@@ -40,12 +40,8 @@ private:
 
 int main()
 {
-	//[문제] 다음이 문제없이 실행되도록 클래스를 코딩하여라
-	INT n = 1;
-	for (size_t i = 0; i < 10; i++)// ++i로 사용해야한다. 후위증감의 경우 복사생성이 계속 일어난다.
-	{
-
-	}
+	STRING s{ "the quick brown fox jumps over the lazy dog" };
+	qsort();
 
 	//save("main.cpp");
 }
