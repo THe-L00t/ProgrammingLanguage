@@ -13,16 +13,37 @@
 using namespace std;
 extern bool observe;
 
+class INT {
+public:
+	INT(int i) :data{ i } {
+
+	}
+
+	INT& operator++() {
+		++data;
+		return *this;
+	}
+	//post-increment
+	const INT& operator++(int i) {
+		INT temp{ *this };
+		++(*this);
+		return std::move(temp);
+	}
+
+	friend std::ostream& operator<<(std::ostream& os, const INT& i) {
+		return os << i.data;
+	}
+private:
+	int data{};
+};
 
 
 int main()
 {
-	int n = 1;
-
-	int a = ++n; //전위증감 연산자와 후위증감연산자의 차이
-
+	//[문제] 다음이 문제없이 실행되도록 클래스를 코딩하여라
+	INT n = 1;
+	INT a = n++;
 	std::cout << a << std::endl;
-
 
 	//save("main.cpp");
 }
