@@ -70,7 +70,12 @@ size_t STRING::length() const
 
 STRING operator+(const char* lhs, const STRING& rhs)
 {
-	return STRING();
+	STRING temp;
+	temp.len = strlen(lhs) + rhs.len;
+	temp.data = new char[temp.len];
+	memcpy(temp.data, lhs, strlen(lhs));
+	memcpy(temp.data + strlen(lhs), rhs.data, rhs.len);
+	return temp;
 }
 
 std::ostream& operator<<(std::ostream& os, const STRING& s)
