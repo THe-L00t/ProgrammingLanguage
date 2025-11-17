@@ -42,7 +42,7 @@ int main()
 {
 	//[문제] 다음이 문제없이 실행되도록 클래스를 코딩하여라
 	INT n = 1;
-	INT a = n++;
+	INT a = n++ ++ ++ ;//빨간줄이 나오도록 숙제
 	std::cout << a << std::endl;
 
 	//save("main.cpp");
