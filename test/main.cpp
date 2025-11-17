@@ -24,7 +24,7 @@ public:
 		return *this;
 	}
 	//post-increment
-	const INT& operator++(int i) {
+	const INT& operator++(int i) {	// 여기의 int는 place-holer
 		INT temp{ *this };
 		++(*this);
 		return std::move(temp);
