@@ -13,6 +13,8 @@
 using namespace std;
 extern bool observe;
 
+
+
 int main()
 {
 	observe = true;

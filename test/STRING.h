@@ -27,11 +27,13 @@ public:
 	STRING& operator=(const STRING&);
 	//operator overloading
 	STRING operator+(const STRING&);
-	friend std::ostream& operator<<(std::ostream& os, const STRING& s);
+	
 	//interface : 멤버변수를 바깥으로 노출
 	size_t length() const;	//정렬에 필요한 getter
 	
-	
+	friend STRING operator+(const char* lhs, const STRING& rhs);
+	friend std::ostream& operator<<(std::ostream& os, const STRING& s);
+
 private:
 
 	size_t len{};
