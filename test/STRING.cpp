@@ -63,7 +63,7 @@ STRING STRING::operator+(const STRING& rhs)
 	return temp;
 }
 
-char STRING::operator[](int idx)
+char& STRING::operator[](int idx)
 {
 	return data[idx];
 }
