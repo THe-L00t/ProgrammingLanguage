@@ -53,6 +53,32 @@ STRING& STRING::operator=(const STRING& other)
 	return *this;
 }
 
+STRING::STRING(STRING&& other)
+	:id{++sid}
+{
+	len = other.len;
+	data = other.data;
+
+	other.len = 0;
+	other.data = nullptr;
+	if (observe)std::println("[{:4}] 이동생성자    - 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
+}
+
+STRING& STRING::operator=(STRING&& other)
+{
+	if (this not_eq &other) {
+		delete[] data;
+
+		len = other.len;
+		data = other.data;
+
+		other.len = 0;
+		other.data = nullptr;
+	}
+	if (observe)std::println("[{:4}] 이동할당연산자- 주소:{:014}, 개수:{:<3}, 글주소:{:014}", id, (void*)(STRING*)this, len, (void*)(char*)data);
+	return *this;
+}
+
 STRING STRING::operator+(const STRING& rhs)
 {
 	STRING temp;
