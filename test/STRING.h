@@ -25,6 +25,11 @@ public:
 
 	STRING(const STRING&);
 	STRING& operator=(const STRING&);
+
+	STRING(STRING&&);
+	STRING& operator=(STRING&&);
+
+
 	//operator overloading
 	STRING operator+(const STRING&);
 	char operator[](int) const;
