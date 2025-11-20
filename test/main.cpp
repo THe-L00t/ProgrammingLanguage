@@ -17,7 +17,7 @@ int main()
 {
 	
 	std::string s1{ "2025³â 11¿ù 20ÀÏ" };
-	std::string s2 = s1;
+	std::string s2 = move(s1);
 
 	std::cout << s1 << std::endl;
 	std::cout << s2 << std::endl;
