@@ -27,6 +27,7 @@ public:
 	STRING& operator=(const STRING&);
 	//operator overloading
 	STRING operator+(const STRING&);
+	char operator[](int) const;
 	char& operator[](int);
 	//interface : 멤버변수를 바깥으로 노출
 	size_t length() const;	//정렬에 필요한 getter
