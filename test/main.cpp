@@ -16,16 +16,11 @@ extern bool observe;
 int main()
 {
 	
-	STRING s{ "2025년 11월 20일" };
-	// [문제] s의 글자중에서 숫자를 찾아 '*'로 바꿔라
-	for (size_t i = 0; i < s.length(); i++)
-	{
-		if (isdigit(s[i])) s[i] = '*';	//처음 왜 빨간줄이 뜨나 
-	}
+	std::string s1{ "2025년 11월 20일" };
+	std::string s2 = s1;
 
-
-	std::cout << s << std::endl;
-
+	std::cout << s1 << std::endl;
+	std::cout << s2 << std::endl;
 	//save("main.cpp");
 }
 
