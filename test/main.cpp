@@ -19,7 +19,7 @@ int main()
 	string s{ "2025년 11월 20일" };
 	for (size_t i = 0; i < s.length(); i++)
 	{
-		std::cout << s.operator[](i) << std::endl;
+		std::cout << s.operator[](i) << std::endl; //이때 한글을 한번에 2바이트를 사용하기때문에 출력되지 않는다. 
 	}
 
 	//save("main.cpp");
