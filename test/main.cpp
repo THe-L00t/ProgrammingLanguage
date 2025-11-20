@@ -16,13 +16,11 @@ extern bool observe;
 int main()
 {
 	observe = true;
-	STRING s{ "the quick brown fox jumps over the lazy dog" };
-	qsort(s.getData(), s.length(), sizeof(char), [](const void* a, const void* b) {
-		return *(char*)a - *(char*)b;
-		});
-
-
-	std::cout << s << std::endl;
+	string s{ "2025³â 11¿ù 20ÀÏ" };
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		std::cout << s.operator[](i) << std::endl;
+	}
 
 	//save("main.cpp");
 }
