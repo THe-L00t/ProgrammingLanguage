@@ -68,6 +68,11 @@ size_t STRING::length() const
 	return len;
 }
 
+char* STRING::getData() const
+{
+	return data;
+}
+
 STRING operator+(const char* lhs, const STRING& rhs)
 {
 	STRING temp;
