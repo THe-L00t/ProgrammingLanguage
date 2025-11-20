@@ -6,6 +6,7 @@
 #include <fstream>
 #include <string>
 #include <memory>
+#include <algorithm>
 
 #include "STRING.h"
 #include "save.h"
@@ -16,12 +17,18 @@ extern bool observe;
 int main()
 {
 	
-	std::string s1{ "2025년 11월 20일" };
-	std::string s2 = move(s1);	//이동의미론 찾아보기
-	//이때 s1이 xvalue가 된다 
+	STRING s[]{ "333","1","55555","22","4444" };
+	observe = true;
+	int cnt{};
+	std::sort(begin(s), end(s), [](const STRING& a, const STRING& b) {
+		++cnt;
+		return a.length() < b.length();
+		});
+	observe = false;
+	for (const STRING& s : s)
+		std::cout << s << std::endl;
 
-	std::cout << s1 << std::endl;
-	std::cout << s2 << std::endl;
+	
 	//save("main.cpp");
 }
 
