@@ -20,7 +20,7 @@ int main()
 	// [문제] s의 글자중에서 숫자를 찾아 '*'로 바꿔라
 	for (size_t i = 0; i < s.length(); i++)
 	{
-		if (isdigit(s[i])) s[i] = '*';
+		if (isdigit(s[i])) s[i] = '*';	//처음 왜 빨간줄이 뜨나 
 	}
 
 
