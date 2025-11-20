@@ -17,7 +17,8 @@ int main()
 {
 	
 	std::string s1{ "2025년 11월 20일" };
-	std::string s2 = move(s1);
+	std::string s2 = move(s1);	//이동의미론 찾아보기
+	//이때 s1이 xvalue가 된다 
 
 	std::cout << s1 << std::endl;
 	std::cout << s2 << std::endl;
