@@ -63,6 +63,11 @@ STRING STRING::operator+(const STRING& rhs)
 	return temp;
 }
 
+char STRING::operator[](int idx)
+{
+	return data[idx];
+}
+
 size_t STRING::length() const
 {
 	return len;
