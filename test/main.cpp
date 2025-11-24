@@ -14,7 +14,7 @@ using namespace std;
 extern bool observe;
 
 // [문제] 다운받은 파일 "개천마리.txt"에는 class Dog 객체 1000개가 저장되어 있다. 
-// 파일을 본것과 같이 id
+// 파일을 본것과 같이 id를 먼저 기록하고, name를 나중에 저장하였다. 
 // 파일을 모두 읽어 Dog객체에 저장하라. 
 // 읽은 Dog객체를 id기준 오름차순 정렬하라. 
 // 화면에 id와 name를 출력하라. 
@@ -22,6 +22,12 @@ class Dog {
 public:
 	friend std::istream& operator>>(std::istream& is, Dog& rhs) {
 		return is >> rhs.id >> rhs.name;
+	}
+	int GetId() const {
+		return id;
+	}
+	friend std::ostream& operator<<(std::ostream& os, const Dog& rhs) {
+		return os << rhs.id << " - " << rhs.name;
 	}
 private:
 	int id{};
@@ -31,7 +37,19 @@ private:
 int main()
 {
 	Dog dogs[1000];
+	std::ifstream in{ "개천마리.txt" };
+	for (Dog& dog : dogs)
+	{
+		in >> dog;
+	}
 
+	qsort(dogs, 1000, sizeof(Dog), [](const void* a, const void* b) {
+		return ((Dog*)a)->GetId() - ((Dog*)b)->GetId();
+		});
+
+	for (const Dog& dog : dogs) {
+		std::cout << dog << std::endl;
+	}
 	
 	//save("main.cpp");
 }
