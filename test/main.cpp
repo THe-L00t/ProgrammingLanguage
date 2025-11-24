@@ -7,6 +7,7 @@
 #include <string>
 #include <random>
 #include <print>
+#include <fstream>
 
 #include "STRING.h"
 #include "save.h"
@@ -43,7 +44,7 @@ public:
 		return name.length();
 	}
 	friend std::ostream& operator<< (std::ostream & os, const Dog & d) {
-		return os << d.name << " - " << d.name.length();
+		return os << d.id << " " << d.name ;
 	}
 private:
 	STRING name;
@@ -52,22 +53,15 @@ private:
 
 int main()
 {
-	// 연산자 오버로딩 중에서 강의하지 않은 연산자가 있다. () - 함수 호출 연산자
+	// dogs를 파일에 기록한다
+	std::ofstream out{ "개천마리.txt" };
 	
-	Dog dogs[10];	// Dog는 생성시 [10,30] 임의의 길이를 갖는 STRING name멤버가 있다. 
-					// name은 생성시 랜덤 소문자로 초기화된다. 
-					// 생성시 [1,100'0000] 랜덤 id값을 갖는다.
+	Dog dogs[1000];	
 
-	// [문제] Dog를 name 길이 기준 오름차순으로 정렬하라 
-	qsort(dogs, 10, sizeof(Dog), [](const void* a, const void* b) {
-		return (int)(((Dog*)a)->nameSize() - ((Dog*)b)->nameSize());
-		});
-	
 
 	for (const Dog& dog : dogs) {
-		dog();			// id와 name을 화면에 출력하라.
-	}					// [id:8자리] - name
-
+		out << dog << std::endl;		
+	}
 	
 	//save("main.cpp");
 }
