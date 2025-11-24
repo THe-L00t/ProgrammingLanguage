@@ -5,8 +5,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <memory>
-#include <algorithm>
+#include <random>
 
 #include "STRING.h"
 #include "save.h"
@@ -14,7 +13,28 @@
 using namespace std;
 extern bool observe;
 
-// [문제] main()이 문제없이 실행되도록 필요한 코딩을 
+std::default_random_engine dre{};
+std::uniform_int_distribution<int> uid{ 'a','z' };
+std::uniform_int_distribution sizeuid{ 10,30 };
+
+// [문제] main()이 문제없이 실행되도록 필요한 코딩을 추가하라
+class Dog {
+public:
+	Dog() {
+		char temp[30]{};
+		int nSize = sizeuid(dre);
+		for (size_t i = 0; i < nSize; ++i)
+		{
+			temp[i] = uid(dre);
+		}
+		name = temp;
+	}
+	friend std::ostream& operator<< (std::ostream & os, const Dog & d) {
+		return os << d.name << ' - ' << d.name.length();
+	}
+private:
+	STRING name;
+};
 
 int main()
 {
