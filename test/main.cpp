@@ -38,6 +38,7 @@ int main()
 {
 	Dog dogs[1000];
 	std::ifstream in{ "개천마리.txt" };
+	if (not in) return 20251124;
 	for (Dog& dog : dogs)
 	{
 		in >> dog;
