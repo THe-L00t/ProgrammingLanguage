@@ -20,7 +20,7 @@ int main()
 	STRING s[]{ "333","1","55555","22","4444" };
 	observe = true;
 	int cnt{};
-	std::sort(begin(s), end(s), [](const STRING& a, const STRING& b) {
+	std::sort(begin(s), end(s), [&cnt](const STRING& a, const STRING& b) {
 		++cnt;
 		return a.length() < b.length();
 		});
