@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------------------------------------
 // 12. 15 - 기말 고사 : 다형성 구현 - 강의때 사용한 코드 이용
-// special 함수
+// 클래스간의 관계 - 상속(inheritance), 템플릿
 //------------------------------------------------------------------------------------------------------------
 #include <iostream>
 #include <fstream>
@@ -16,17 +16,9 @@ extern bool observe;
 
 int main()
 {
+	// 연산자 오버로딩 중에서 강의하지 않은 연산자가 있다. () - 함수 호출 연산자
+
 	
-	STRING s[]{ "333","1","55555","22","4444" };
-	observe = true;
-	int cnt{};
-	std::sort(begin(s), end(s), [&cnt](const STRING& a, const STRING& b) {
-		++cnt;
-		return a.length() < b.length();
-		});
-	observe = false;
-	for (const STRING& s : s)
-		std::cout << s << std::endl;
 
 	
 	//save("main.cpp");
