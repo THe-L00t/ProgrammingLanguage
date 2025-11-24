@@ -25,12 +25,11 @@ public:
 		int nSize = sizeuid(dre);
 		for (size_t i = 0; i < nSize; ++i)
 		{
-			temp[i] = uid(dre);
+			name += uid(dre);
 		}
-		name = temp;
 	}
 	friend std::ostream& operator<< (std::ostream & os, const Dog & d) {
-		return os << d.name << ' - ' << d.name.length();
+		return os << d.name << " - " << d.name.length();
 	}
 private:
 	STRING name;

@@ -99,6 +99,29 @@ char& STRING::operator[](int idx)
 	return data[idx];
 }
 
+STRING STRING::operator+=(const char* rhs)
+{
+	size_t st = len;
+	len += strlen(rhs);
+	char* temp = new char[len];
+	memcpy(temp, data, st);
+	memcpy(temp + st, rhs, strlen(rhs));
+	delete[] data;
+	data = temp;
+	return *this;
+}
+
+STRING STRING::operator+=(int rhs)
+{
+	len += 1;
+	char* temp = new char[len];
+	memcpy(temp, data, len-1);
+	temp[len - 1] = (char)rhs;
+	delete[] data;
+	data = temp;
+	return *this;
+}
+
 size_t STRING::length() const
 {
 	return len;
