@@ -21,13 +21,18 @@ std::uniform_int_distribution sizeuid{ 10,30 };
 class Dog {
 public:
 	Dog() {
-		char temp[30]{};
 		int nSize = sizeuid(dre);
+		char* temp = new char[nSize+1];
 		for (size_t i = 0; i < nSize; ++i)
 		{
 			temp[i] = uid(dre);
 		}
+		temp[nSize] = '\0';
 		name = temp;
+		delete[] temp;
+	}
+	size_t nameSize() const {
+		return name.length();
 	}
 	friend std::ostream& operator<< (std::ostream & os, const Dog & d) {
 		return os << d.name << " - " << d.name.length();
@@ -42,6 +47,12 @@ int main()
 	
 	Dog dogs[10];	// Dog는 생성시 [10,30] 임의의 길이를 갖는 STRING name멤버가 있다. 
 				// name은 생성시 랜덤 소문자로 초기화된다. 
+
+	// [문제] Dog를 name 길이 기준 오름차순으로 정렬하라 
+	qsort(dogs, 10, sizeof(Dog), [](const void* a, const void* b) {
+		return (int)((*(Dog*)a).nameSize() - (*(Dog*)b).nameSize());
+		});
+
 
 	for (const Dog& dog : dogs) {
 		std::cout << dog << std::endl;

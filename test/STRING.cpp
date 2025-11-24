@@ -111,12 +111,12 @@ STRING STRING::operator+=(const char* rhs)
 	return *this;
 }
 
-STRING STRING::operator+=(int rhs)
+STRING STRING::operator+=(char rhs)
 {
 	len += 1;
 	char* temp = new char[len];
 	memcpy(temp, data, len-1);
-	temp[len - 1] = (char)rhs;
+	temp[len - 1] = rhs;
 	delete[] data;
 	data = temp;
 	return *this;
