@@ -52,7 +52,7 @@ int main()
 	qsort(dogs, 10, sizeof(Dog), [](const void* a, const void* b) {
 		return (int)((*(Dog*)a).nameSize() - (*(Dog*)b).nameSize());
 		});
-
+	 
 
 	for (const Dog& dog : dogs) {
 		std::cout << dog << std::endl;
