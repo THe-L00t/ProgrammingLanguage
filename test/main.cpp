@@ -13,7 +13,9 @@
 using namespace std;
 extern bool observe;
 
-class A; // 선언
+class A {
+	B b;	//클래스끼리 연관이 있다. 
+};
 
 class B {
 
