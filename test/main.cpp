@@ -13,13 +13,8 @@
 using namespace std;
 extern bool observe;
 
-class A {
-	B b;	//클래스끼리 연관(has-a)이 있다. 
-};
-
-class B {
-
-};	
+//객체간의 관계
+// is-a			has-a
 
 // 클래스 관계에는 의존, 연관, 등등 다양하게 있다
 int main()
