@@ -15,24 +15,16 @@
 using namespace std;
 extern bool observe;
 
-// 객체 설계 SOLID
+class Animal {
 
-class StarString : public std::string {
-	friend std::ostream& operator<<(std::ostream& os, const StarString& s) {
-		for (const char c : s) {
-			if (isdigit(c)) os << '*';
-			else os << c;
-		}
-		return os;
-	}
 };
 
-// [문제] std::string과 기능은 같은데 숫자를 '*'로 출력하는 클래스 코딩해라 
+class Dog : public Animal {
+
+};
+
 int main()
 {
-	StarString s{ "2025년 11월 27일 - 상속은 코드를 재사용하려고 한다." };
-	
-	std::cout << s << std::endl;
 
 	//save("main.cpp");
 }
