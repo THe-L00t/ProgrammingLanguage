@@ -17,10 +17,14 @@ extern bool observe;
 
 class Animal {
 public:
+	Animal() = default;
+	Animal(const char* name) : name{ name } {
+
+	}
 	virtual void move() {
 		cout << "모든 동물은 움직인다." << std::endl;
 	}
-protected:
+private:
 	std::string name;
 
 };
@@ -28,11 +32,10 @@ protected:
 class Dog : public Animal {
 public:
 	Dog() = default;
-	Dog(const char* s) {
-		name = s;
+	Dog(const char* s) : Animal{s} {
 	}
 	void move() override {
-		std::cout << "Dog : " << name << std::endl;
+		std::cout << "Dog" << std::endl;
 	}
 private:
 	int spd{};
