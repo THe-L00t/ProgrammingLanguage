@@ -16,16 +16,32 @@ using namespace std;
 extern bool observe;
 
 class Animal {
+public:
+	virtual void move() {
+		cout << "모든 동물은 움직인다." << std::endl;
+	}
+protected:
+	std::string name;
 
 };
 
 class Dog : public Animal {
-
+public:
+	Dog() = default;
+	Dog(const char* s) {
+		name = s;
+	}
+	void move() override {
+		std::cout << "Dog : " << name << std::endl;
+	}
+private:
+	int spd{};
 };
 
 int main()
 {
-
+	Dog dog{"코코"};
+	dog.move();
 	//save("main.cpp");
 }
 
