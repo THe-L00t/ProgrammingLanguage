@@ -15,10 +15,8 @@
 using namespace std;
 extern bool observe;
 
-//객체간의 관계
-// is-a			has-a
 
-// 클래스 관계에는 의존, 연관, 등등 다양하게 있다
+// [문제] std::string과 기능은 같은데 숫자를 '*'로 출력하는 클래스 코딩해라 
 int main()
 {
 	
