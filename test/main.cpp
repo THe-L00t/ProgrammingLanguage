@@ -14,13 +14,14 @@ using namespace std;
 extern bool observe;
 
 class A {
-	B b;	//클래스끼리 연관이 있다. 
+	B b;	//클래스끼리 연관(has-a)이 있다. 
 };
 
 class B {
 
-};	//정의
+};	
 
+// 클래스 관계에는 의존, 연관, 등등 다양하게 있다
 int main()
 {
 	
