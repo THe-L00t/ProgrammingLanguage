@@ -8,6 +8,7 @@
 #include <fstream>
 #include <string>
 #include <fstream>
+#include <random>
 
 #include "STRING.h"
 #include "save.h"
@@ -15,17 +16,24 @@
 using namespace std;
 extern bool observe;
 
+std::default_random_engine dre;
+std::uniform_int_distribution uid{ 1,10'0000 };
+std::uniform_int_distribution<int> nuid{ 'a', 'z'};
+
 class Animal {
 public:
-	Animal() = default;
+	Animal() {
+		int temp = uid(dre) % 10;
+		for (size_t i = 0; i < temp; ++i)
+		{
+			name += static_cast<char>(nuid(dre));
+		}
+	};
 	Animal(const char* name) : name{ name } {
 		std::cout << "Animal 생성" << std::endl;
 	}
-	~Animal() {
-		std::cout << "Animal 소멸" << std::endl;
-	}
+	
 	virtual void move() {
-		cout << "난" << name << "야,";
 	}
 protected:	// 상속을 위한 access modifier
 	std::string name;
@@ -34,16 +42,19 @@ protected:	// 상속을 위한 access modifier
 
 class Dog : public Animal {
 public:
-	Dog() = default;
+	Dog() {
+		spd = uid(dre);
+	};
 	Dog(const char* s) : Animal{s} {
-		std::cout << "Dog 생성" << std::endl;
+		spd = uid(dre);
 	}
-	~Dog() {
-		std::cout << "Dog 소멸" << std::endl;
-	}
+	
 	void move() override {
-		Animal::move();
-		std::cout << "내 속도는 " << spd << std::endl;
+		std::cout <<"나는 " << name<<"야. " << "내 속도는 " << spd << std::endl;
+	}
+
+	int GetSpd() const {
+		return spd;
 	}
 private:
 	int spd{};
@@ -51,9 +62,17 @@ private:
 
 int main()
 {
+	//[문제] 문제없이 실행되도록 필요한 코드를 추가하세요
+	Dog dogs[1000];		//speed값을 [1,10'000] 랜덤값으로 설정한다. 
+
+	// speed 기준 오름차순으로 정렬한다. 
+	qsort(dogs, 1000, sizeof(Dog), [](const void* a, const void* b) {
+		return ((Dog*)a)->GetSpd() - ((Dog*)b)->GetSpd();
+		});
+	// 가장 빠른 dogs의 정보를 화면에 출력한다. 
+	dogs[999].move();
+	//std::end(dogs)->move();	이렇게도 가능
 	
-	Dog dog{"코코"};
-	dog.move();
 	//save("main.cpp");
 }
 
