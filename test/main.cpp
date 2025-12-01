@@ -27,7 +27,7 @@ public:
 	virtual void move() {
 		cout << "난" << name << "야,";
 	}
-private:
+protected:	// 상속을 위한 access modifier
 	std::string name;
 
 };
@@ -51,7 +51,7 @@ private:
 
 int main()
 {
-	// [문제] 생성자와 소멸자가 어떤 순서로 호출되는지 관찰하라
+	
 	Dog dog{"코코"};
 	dog.move();
 	//save("main.cpp");
