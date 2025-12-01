@@ -71,7 +71,7 @@ int main()
 		});
 	// 가장 빠른 dogs의 정보를 화면에 출력한다. 
 	dogs[999].move();
-	//std::end(dogs)->move();	이렇게도 가능
+	//std::end(dogs)->move();	프로그램 사망함 더 알아보기
 	
 	//save("main.cpp");
 }
