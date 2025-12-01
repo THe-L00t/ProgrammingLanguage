@@ -69,7 +69,10 @@ private:
 
 int main()
 {
-	
+	//출력 되게 하라
+	Bird b{"코코"};
+
+	b.move();	//난 name야, 난 날고 있어 
 	
 	//save("main.cpp");
 }
