@@ -33,7 +33,7 @@ public:
 		std::cout << "Animal 생성" << std::endl;
 	}
 	
-	virtual void move() {
+	virtual void move() const{
 	}
 protected:	// 상속을 위한 access modifier
 	std::string name;
@@ -42,7 +42,13 @@ protected:	// 상속을 위한 access modifier
 
 class Bird : public Animal {
 public:
+	Bird() = default;
+	Bird(const char* s) : Animal{ s } {
+	}
 
+	void move() const override {
+		std::cout << "나는 " << name << "야. 나는 날고 있어" << std::endl;
+	}
 private:
 
 };
@@ -56,7 +62,7 @@ public:
 		spd = uid(dre);
 	}
 	
-	void move() override {
+	void move() const override {
 		std::cout <<"나는 " << name<<"야. " << "내 속도는 " << spd << std::endl;
 	}
 
