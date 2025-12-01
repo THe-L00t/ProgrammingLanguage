@@ -40,6 +40,13 @@ protected:	// 상속을 위한 access modifier
 
 };
 
+class Bird : public Animal {
+public:
+
+private:
+
+};
+
 class Dog : public Animal {
 public:
 	Dog() {
@@ -62,16 +69,7 @@ private:
 
 int main()
 {
-	//[문제] 문제없이 실행되도록 필요한 코드를 추가하세요
-	Dog dogs[1000];		//speed값을 [1,10'000] 랜덤값으로 설정한다. 
-
-	// speed 기준 오름차순으로 정렬한다. 
-	qsort(dogs, 1000, sizeof(Dog), [](const void* a, const void* b) {
-		return ((Dog*)a)->GetSpd() - ((Dog*)b)->GetSpd();
-		});
-	// 가장 빠른 dogs의 정보를 화면에 출력한다. 
-	dogs[999].move();
-	//std::end(dogs)->move();	프로그램 사망함 더 알아보기
+	
 	
 	//save("main.cpp");
 }
