@@ -19,10 +19,13 @@ class Animal {
 public:
 	Animal() = default;
 	Animal(const char* name) : name{ name } {
-
+		std::cout << "Animal 생성" << std::endl;
+	}
+	~Animal() {
+		std::cout << "Animal 소멸" << std::endl;
 	}
 	virtual void move() {
-		cout << "모든 동물은 움직인다." << std::endl;
+		cout << "난" << name << "야,";
 	}
 private:
 	std::string name;
@@ -33,9 +36,14 @@ class Dog : public Animal {
 public:
 	Dog() = default;
 	Dog(const char* s) : Animal{s} {
+		std::cout << "Dog 생성" << std::endl;
+	}
+	~Dog() {
+		std::cout << "Dog 소멸" << std::endl;
 	}
 	void move() override {
-		std::cout << "Dog" << std::endl;
+		Animal::move();
+		std::cout << "내 속도는 " << spd << std::endl;
 	}
 private:
 	int spd{};
@@ -43,6 +51,7 @@ private:
 
 int main()
 {
+	// [문제] 생성자와 소멸자가 어떤 순서로 호출되는지 관찰하라
 	Dog dog{"코코"};
 	dog.move();
 	//save("main.cpp");
