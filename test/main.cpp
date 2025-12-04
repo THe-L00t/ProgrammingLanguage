@@ -17,8 +17,8 @@ using namespace std;
 extern bool observe;
 
 std::default_random_engine dre;
-std::uniform_int_distribution uid{ 1,10'0000 };
-std::uniform_int_distribution<int> nuid{ 'a', 'z'};
+std::uniform_int_distribution uid{ 0,1 };
+
 
 class Animal {
 public:
@@ -54,19 +54,24 @@ private:
 	int d;
 };
 
+
+// [실습] 동물농장 주인이다. 모두 10마리의 Dog와 Bird를 사육한다. 
+// 10 마리를 수용하는 우리가 있다. 
+// 주사위를 던져서 짝수면 Dog, 홀수면 Bird를 우리에 넣는다.
+// 모든 동물들에게 move하도록 햇다. 
+// 다형성이 잘 구현되는지 확인하자 
+
 int main()
 {
-	Dog dog;
-	Bird bird;
+	Animal* animals[10];
+	for (size_t i = 0; i < 10; i++)
+	{
+		int temp = uid(dre);
+		animals[i] = (temp == 1) ? (Animal*)new Dog() : (Animal*)new Bird();
+	}
 
-	Animal* animals[2];
-	animals[0] = &dog;
-	animals[1] = &bird;
-
-	// 다형성을 구현
 	for (Animal* p : animals)
 		p->move();
-
 	//save("main.cpp");
 }
 
