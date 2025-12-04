@@ -24,10 +24,12 @@ class Animal {
 public:
 	void move() {
 		std::cout << "움직이는것을 대표" << std::endl;
+		// kind별 행동 나누기(동적 다형성)
 	}
 
 private:
 	int a;
+	int kind;
 };
 
 class Bird : public Animal {
@@ -55,7 +57,14 @@ int main()
 	Dog dog;
 	Bird bird;
 
-	Animal* p = &dog;
+	Animal* animals[2];
+	animals[0] = &dog;
+	animals[1] = &bird;
+
+	// 다형성을 구현
+	for (Animal* p : animals)
+		p->move();
+
 	//save("main.cpp");
 }
 
