@@ -23,6 +23,7 @@ std::uniform_int_distribution<int> nuid{ 'a', 'z'};
 class Animal {
 public:
 	//C++에서 다형성을 구현하는 핵심 Keyword - virtual
+	//실제 객체마다 vptr이 생성
 	virtual void move() {
 		std::cout << "움직이는것을 대표" << std::endl;
 		// kind별 행동 나누기(동적 다형성)
