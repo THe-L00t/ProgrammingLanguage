@@ -22,63 +22,31 @@ std::uniform_int_distribution<int> nuid{ 'a', 'z'};
 
 class Animal {
 public:
-	Animal() {
-		int temp = uid(dre) % 10;
-		for (size_t i = 0; i < temp; ++i)
-		{
-			name += static_cast<char>(nuid(dre));
-		}
-	};
-	Animal(const char* name) : name{ name } {
-		std::cout << "Animal 생성" << std::endl;
+	void move() {
+		std::cout << "움직이는것을 대표" << std::endl;
 	}
-	
-	virtual void move() const{
-	}
-protected:	// 상속을 위한 access modifier
-	std::string name;
 
+private:
+	int a;
 };
 
 class Bird : public Animal {
-public:
-	Bird() = default;
-	Bird(const char* s) : Animal{ s } {
-	}
-
-	void move() const override {
-		std::cout << "나는 " << name << "야. 나는 날고 있어" << std::endl;
-	}
 private:
-
+	int b1;
+	int b2;
 };
 
 class Dog : public Animal {
 public:
-	Dog() {
-		spd = uid(dre);
-	};
-	Dog(const char* s) : Animal{s} {
-		spd = uid(dre);
-	}
-	
-	void move() const override {
-		std::cout <<"나는 " << name<<"야. " << "내 속도는 " << spd << std::endl;
-	}
-
-	int GetSpd() const {
-		return spd;
+	void move() {	//오버라이딩은 다형성/상속의 경우에만 사용
+		std::cout << "개" << std::endl;
 	}
 private:
-	int spd{};
+	int d;
 };
 
 int main()
 {
-	//출력 되게 하라
-	Bird b{"코코"};
-
-	b.move();	//난 name야, 난 날고 있어 
 	
 	//save("main.cpp");
 }
