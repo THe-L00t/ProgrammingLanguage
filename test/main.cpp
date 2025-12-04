@@ -31,6 +31,10 @@ private:
 };
 
 class Bird : public Animal {
+public:
+	void move() {	
+		std::cout << "새" << std::endl;
+	}
 private:
 	int b1;
 	int b2;
@@ -38,6 +42,7 @@ private:
 
 class Dog : public Animal {
 public:
+	// 상속에만 사용되는 멤버함수 overriding
 	void move() {	//오버라이딩은 다형성/상속의 경우에만 사용
 		std::cout << "개" << std::endl;
 	}
@@ -47,7 +52,10 @@ private:
 
 int main()
 {
-	
+	Dog dog;
+	Bird bird;
+
+	Animal* p = &dog;
 	//save("main.cpp");
 }
 
