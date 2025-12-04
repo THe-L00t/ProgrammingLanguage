@@ -22,6 +22,7 @@ std::uniform_int_distribution uid{ 0,1 };
 
 class Animal {
 public:
+	virtual ~Animal() {}
 	//C++에서 다형성을 구현하는 핵심 Keyword - virtual
 	//실제 객체마다 vptr이 생성
 	virtual void move() {
@@ -61,6 +62,13 @@ private:
 // 모든 동물들에게 move하도록 햇다. 
 // 다형성이 잘 구현되는지 확인하자 
 
+void dieAnimal(Animal** a, int idx) {
+	delete (a[idx-1]);
+	std::cout << a[idx-1] << std::endl;
+	memcpy(a + idx - 1, a + idx, sizeof(Animal*)*(10-idx));
+}
+
+
 int main()
 {
 	Animal* animals[10];
@@ -69,9 +77,21 @@ int main()
 		int temp = uid(dre);
 		animals[i] = (temp == 1) ? (Animal*)new Dog() : (Animal*)new Bird();
 	}
-
-	for (Animal* p : animals)
+	int i{};
+	for (Animal* p : animals) {
+		std::cout << ++i << " - ";
 		p->move();
+	}
+	dieAnimal(animals, 5);
+	i=0;
+	for (Animal* p : animals) {
+		std::cout << ++i << " - " << p << " ";
+		p->move();
+
+	}
+	
+	// 
+		
 	//save("main.cpp");
 }
 
