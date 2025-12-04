@@ -34,9 +34,9 @@ private:
 	int kind;
 };
 
-class Bird : public Animal {
+class Bird final: public Animal {
 public:
-	void move() {	
+	virtual void move() override{	
 		std::cout << "새" << std::endl;
 	}
 private:
@@ -47,7 +47,7 @@ private:
 class Dog : public Animal {
 public:
 	// 상속에만 사용되는 멤버함수 overriding
-	void move() {	//오버라이딩은 다형성/상속의 경우에만 사용
+	virtual void move() override final{	//오버라이딩은 다형성/상속의 경우에만 사용
 		std::cout << "개" << std::endl;
 	}
 private:
