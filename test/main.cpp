@@ -34,9 +34,12 @@ int Game::gid{ 0 };
 
 class Human :public Game {
 public:
+	Human(const std::string& n) : name{ n } {}
 	virtual void render() const override {
-		std::cout << "Human - render" << std::endl;
+		std::cout << "Human - render : " << id << " - " << name << std::endl;
 	}
+private:
+	std::string name;
 };
 
 class Monster :public Game {
@@ -50,7 +53,23 @@ public:
 
 int main()
 {
+	// 내 게임에서 움직일 Monster들, Human객체들을 다형성을 이용하여 관리한다. 
 
+	//전체 몇 객체를 관리할지 프로그램 실행 시 결정할 수 있도록 사용자가 입력한 숫자를 사용한다. 
+	// 동전을 던져 앞면이면 Human, 뒷면이면 Monster객체를 생성한다. 
+
+
+	// num개 객체에 render명령으로 다형성이 구현됨을 확인한다. 
+	// Human 객체만 name오름차순으로 정렬하여 출력하고 싶다. 방법이 없겠니?
+	// 내 게임세상에서 Monster들의 num값을 -100하고 싶다. 
+	// 내 게임 세상에서 Monster들을 모두 제거 하고 싶다. 
+
+	//메모리 그림그려라
+
+	Game** objList;
+
+	Human a{ "기말" };
+	a.render();
 
 	//save("main.cpp");
 }
