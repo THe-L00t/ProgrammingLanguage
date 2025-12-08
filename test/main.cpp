@@ -16,6 +16,9 @@
 using namespace std;
 extern bool observe;
 
+std::default_random_engine dre{};
+std::uniform_int_distribution uid{ 0,1 };
+
 //		Game
 //		/  \ 
 //	Human  Monster
@@ -58,7 +61,7 @@ int main()
 	//전체 몇 객체를 관리할지 프로그램 실행 시 결정할 수 있도록 사용자가 입력한 숫자를 사용한다. 
 	// 동전을 던져 앞면이면 Human, 뒷면이면 Monster객체를 생성한다. 
 
-
+	// 도형 문제들과 유사한 문제들 포함
 	// num개 객체에 render명령으로 다형성이 구현됨을 확인한다. 
 	// Human 객체만 name오름차순으로 정렬하여 출력하고 싶다. 방법이 없겠니?
 	// 내 게임세상에서 Monster들의 num값을 -100하고 싶다. 
