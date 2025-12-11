@@ -60,14 +60,12 @@ private:
 
 int main()
 {
-	Human h[10];
-	Monster m[5];
-	for (const Human& hh : h) {
-		hh.render();
-	}
-	for (const Monster& mm : m) {
-		mm.render();
-	}
+	Human h;
+	Monster m;
+
+	Game* g[2]{ &h,&m };
+	g[0]->render();
+	g[1]->render();
 	// 내 게임에서 움직일 Monster들, Human객체들을 다형성을 이용하여 관리한다. 
 
 	//전체 몇 객체를 관리할지 프로그램 실행 시 결정할 수 있도록 사용자가 입력한 숫자를 사용한다. 
@@ -82,9 +80,6 @@ int main()
 	//메모리 그림그려라
 
 	Game** objList;
-
-	Human a{ "기말" };
-	a.render();
 
 	//save("main.cpp");
 }
