@@ -64,8 +64,12 @@ int main()
 	Monster m;
 
 	Game* g[2]{ &h,&m };
-	g[0]->render();
-	g[1]->render();
+	// 내가 관리하는 Game 객체들의 render를 호출
+	for (Game* obj : g) {
+		obj->render();
+	}
+
+
 	// 내 게임에서 움직일 Monster들, Human객체들을 다형성을 이용하여 관리한다. 
 
 	//전체 몇 객체를 관리할지 프로그램 실행 시 결정할 수 있도록 사용자가 입력한 숫자를 사용한다. 
