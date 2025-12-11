@@ -67,7 +67,8 @@ int main()
 	// 내가 관리하는 Game 객체들의 render를 호출
 	// 그런데 Human일때만 render 하고 싶다. (up casting은 언제나 문제 없다 / down casting을 위한 dynamic_cast )
 	for (Game* obj : g) {
-		obj->render();
+		if(dynamic_cast<Human*>(obj))
+			obj->render();
 	}
 
 
