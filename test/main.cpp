@@ -16,8 +16,8 @@
 using namespace std;
 extern bool observe;
 
-std::default_random_engine dre{};
-std::uniform_int_distribution uid{ 0,1 };
+std::default_random_engine dre{20251215};
+std::uniform_int_distribution uid{ 1, 20251215 };
 
 //		Game
 //		/  \ 
@@ -37,25 +37,37 @@ int Game::gid{ 0 };
 
 class Human :public Game {
 public:
+	Human() = default;
 	Human(const std::string& n) : name{ n } {}
 	virtual void render() const override {
-		std::cout << "Human - render : " << id << " - " << name << std::endl;
+		std::cout << id << " - Human : " << name << std::endl;
 	}
 private:
-	std::string name;
+	std::string name{ "이름없음" };
 };
 
 class Monster :public Game {
 public:
 
 	virtual void render() const override {
-		std::cout << "Monster - render" << std::endl;
+		std::cout << id << " - Monster : " << num << std::endl;
 	}
+private:
+	int num{uid(dre)};
+
 };
 
 
 int main()
 {
+	Human h[10];
+	Monster m[5];
+	for (const Human& hh : h) {
+		hh.render();
+	}
+	for (const Monster& mm : m) {
+		mm.render();
+	}
 	// 내 게임에서 움직일 Monster들, Human객체들을 다형성을 이용하여 관리한다. 
 
 	//전체 몇 객체를 관리할지 프로그램 실행 시 결정할 수 있도록 사용자가 입력한 숫자를 사용한다. 
